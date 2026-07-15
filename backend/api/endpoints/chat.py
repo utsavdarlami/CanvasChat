@@ -184,7 +184,7 @@ async def chat_endpoint(request: ChatRequest):
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Chat endpoint error: {e}", exc_info=True)
+        logger.opt(exception=True).error(f"Chat endpoint error: {e}")
         raise HTTPException(
             status_code=500, detail=f"Failed to process chat request: {e}"
         )
@@ -263,7 +263,7 @@ async def _chat_stream_helper(
                     "_layout_group_stages"
                 )
         except Exception as e:
-            logger.warning(f"Stream post-processing failed: {e}", exc_info=True)
+            logger.opt(exception=True).warning(f"Stream post-processing failed: {e}")
 
         yield _sse_format("done", done_data)
 
@@ -372,7 +372,7 @@ async def chat_stream_endpoint(request: ChatRequest):
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Chat stream endpoint error: {e}", exc_info=True)
+        logger.opt(exception=True).error(f"Chat stream endpoint error: {e}")
         raise HTTPException(
             status_code=500, detail=f"Failed to process chat stream request: {e}"
         )
@@ -423,7 +423,7 @@ async def chat_autocomplete_endpoint(request: ChatAutocompleteRequest):
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Autocomplete endpoint error: {e}", exc_info=True)
+        logger.opt(exception=True).error(f"Autocomplete endpoint error: {e}")
         raise HTTPException(
             status_code=500, detail=f"Failed to process autocomplete request: {e}"
         )
@@ -471,7 +471,7 @@ async def clear_session(
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Failed to clear session: {e}", exc_info=True)
+        logger.opt(exception=True).error(f"Failed to clear session: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to clear session: {e}")
 
 

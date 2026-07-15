@@ -66,7 +66,7 @@ A modern web application serving interactive visualizations for graph data. It l
 
 ### Data Model
 - **Nodes only**: The `GraphData` type contains only `nodes` (no links/edges). The `LayoutDelta` contains `updated_nodes`, `added_nodes`, `removed_nodes`, `highlighted_nodes`, and `focused_nodes`.
-- **No abstract coordinates**: Historical abstract-to-canvas scaling was removed. See `REFACTORING_LOG.md` in the repo root for details.
+- **No abstract coordinates**: Historical abstract-to-canvas scaling was removed. Node positions are canvas coordinates end to end; there is no scaling step to reintroduce.
 
 ### Chat Action Flow
 The backend agent runs tools that mutate layout state. The response includes an `action` with a `type` and `layout_delta`:

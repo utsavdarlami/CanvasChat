@@ -199,7 +199,7 @@ def calculate_layout_delta(
                 delta["removed_nodes"].append(entity_id)
 
     except Exception as e:
-        logger.warning(f"Failed to calculate layout delta: {str(e)}", exc_info=True)
+        logger.opt(exception=True).warning(f"Failed to calculate layout delta: {str(e)}")
         # Keep clients running by falling back to a full-layout refresh on delta failures.
         return {
             "updated_nodes": [],

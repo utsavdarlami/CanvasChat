@@ -15,12 +15,11 @@ Everything else from the full project (Layer 2 relationship analysis, Layer 3 sp
 ## Setup
 
 ```bash
-# Create virtual environment
-uv venv
-source .venv/bin/activate
+# Install dependencies into a virtual environment
+# (resolves from pyproject.toml + uv.lock, same as the Dockerfile)
+uv sync
 
-# Install dependencies
-uv pip install -r requirements.txt
+source .venv/bin/activate
 
 # Configure environment
 cp .env.example .env
@@ -142,7 +141,7 @@ See `docs/frontend_chat_autocomplete.md` for client integration guidance, includ
 ```
 semantic-api-lite/
 ├── main.py                  # FastAPI application entry point
-├── requirements.txt
+├── pyproject.toml           # dependencies (uv.lock pins exact versions)
 ├── .env.example
 ├── api/
 │   ├── endpoints/

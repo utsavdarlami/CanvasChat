@@ -41,7 +41,9 @@ def tool_safe(require_layout: bool = True):
 
                 return result
             except Exception as e:
-                logger.error(f"Tool {func.__name__} failed: {str(e)}", exc_info=True)
+                logger.opt(exception=True).error(
+                    f"Tool {func.__name__} failed: {str(e)}"
+                )
                 return {
                     "status": "error",
                     "message": f"Failed to execute {func.__name__}: {str(e)}",
