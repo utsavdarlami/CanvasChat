@@ -1,0 +1,141 @@
+{
+  "analyzed_entities": [
+    {
+      "id": "entity-1768320203221-5196081b",
+      "name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "semantics": {
+        "title": "Top 10 Crime Types (Jan - Mar 2023)",
+        "description": "This bar chart displays the top 10 crime types in Baltimore, ranked by the total number of incidents reported between January and March 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "NIBRS Group A crime data derived from the URL path, indicating a dataset related to crime in Baltimore."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Description",
+            "type": "nominal",
+            "cardinality": 28,
+            "sample_values": [
+              "VANDALISM",
+              "INTIMIDATION",
+              "AUTO THEFT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-01",
+          "end": "2023-03",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "incidents",
+          "top 10",
+          "crime types"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      }
+    },
+    {
+      "id": "entity-1768320230306-9c2d943d",
+      "name": "Q1 2023 - Top 10 Crime Types",
+      "semantics": {
+        "title": "Q1 2023 - Top 10 Crime Types",
+        "description": "This horizontal bar chart displays the top 10 crime types in Los Angeles during the first quarter of 2023, ranked by the total number of incidents.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset of crime incidents in Los Angeles from 2023 onwards, based on the URL and field names like 'Crm Cd Desc' and 'DATE OCC'."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "cardinality": 138,
+            "sample_values": [
+              "SHOPLIFTING - PETTY THEFT ($950 & UNDER)",
+              "THEFT PLAIN - PETTY ($950 & UNDER)",
+              "ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "quarter",
+          "date": null,
+          "start": null,
+          "end": null,
+          "year": 2023,
+          "quarter": "Q1",
+          "source": "data"
+        },
+        "keywords": [
+          "crime types",
+          "incidents",
+          "top 10",
+          "Q1 2023",
+          "Los Angeles"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Los Angeles"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      }
+    }
+  ]
+}

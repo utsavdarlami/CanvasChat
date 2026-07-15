@@ -1,0 +1,97 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "partitions": {
+      "surface_0": [
+        {
+          "bounds": {
+            "min_x": 0.0,
+            "min_y": 0.0,
+            "max_x": 30.0,
+            "max_y": 20.0
+          },
+          "depth": 0,
+          "node_type": "leaf",
+          "layout_type": "PACK",
+          "num_entities": 2,
+          "entity_ids": [
+            "entity-1768320203221-5196081b",
+            "entity-1768320230306-9c2d943d"
+          ],
+          "label": "Group Layout (2)"
+        }
+      ]
+    },
+    "metadata": {
+      "approach": "heuristic_layout",
+      "layer_3_method": "graph_distribution",
+      "entity_count": 2,
+      "relationship_count": 1,
+      "cluster_count": 1,
+      "surfaces": 1,
+      "layout_strategies": {
+        "surface_0": "spring_layout"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "display_name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "entity_id": "entity-1768320203221-5196081b",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 12.0,
+      "y": 10.0,
+      "id": "entity-1768320203221-5196081b"
+    },
+    {
+      "name": "Q1 2023 - Top 10 Crime Types",
+      "display_name": "Q1 2023 - Top 10 Crime Types",
+      "entity_id": "entity-1768320230306-9c2d943d",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 18.0,
+      "y": 10.0,
+      "id": "entity-1768320230306-9c2d943d"
+    }
+  ],
+  "links": [
+    {
+      "relationship_type": "comparative_parallel",
+      "strength": "strong",
+      "confidence": 1.0,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 1.0,
+      "shared_fields": [
+        "crime_type",
+        "incident_count",
+        "temporal_scope"
+      ],
+      "shared_fields_count": 3,
+      "reasoning": "Both entities are bar charts showing the top 10 crime types for the same time period (Q1 2023) but for different locations (Baltimore vs. Los Angeles), making them a direct parallel comparison across datasets.",
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "side_by_side_comparison"
+      },
+      "source_name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "target_name": "Q1 2023 - Top 10 Crime Types",
+      "source": "entity-1768320203221-5196081b",
+      "target": "entity-1768320230306-9c2d943d"
+    }
+  ]
+}

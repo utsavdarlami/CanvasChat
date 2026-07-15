@@ -1,0 +1,93 @@
+You are an expert in data visualization. Analyze a SINGLE Vega-Lite chart specification and extract key semantic properties into a JSON object.
+
+**CRITICAL INSTRUCTIONS:**
+1. Return ONLY a valid JSON object — no explanations, no reasoning.
+2. The JSON MUST match the "Expected JSON Structure" below exactly.
+3. Extract ONLY observable facts from the specification.
+
+---
+
+**INPUTS**
+
+**Vega-Lite Specification:**
+```json
+{spec_json}
+```
+
+**Data Summary (if available):**
+```
+{data_summary}
+```
+
+---
+
+**EXTRACTION GUIDE**
+
+Answer these questions mentally, then output JSON:
+
+**1. TITLE**: Does the spec have a `title` property? If yes, extract verbatim. If no, generate a concise title (max 60 chars) from the field names and chart type.
+
+**2. ITEM TYPE**: Map the `mark` type to a semantic type:
+- "bar" → "bar_chart"
+- "line" → "line_chart"
+- "point" → "scatter_plot"
+- "area" → "area_chart"
+- "arc" → "pie_chart" (if theta encoding present)
+- "boxplot" → "box_plot"
+- "geoshape" → "choropleth"
+- "rect" → "heatmap" (if color encoding on categorical axes)
+- Other marks → use mark type + "_chart"
+
+**3. GRANULARITY**: Assess data aggregation level:
+- "overview": Highly aggregated, <10-15 data points (yearly totals, top categories)
+- "regional": Mid-level aggregation, 10-50 points (monthly data, state-level)
+- "detailed": Minimal aggregation, >50 points (daily data, raw records)
+
+**4. KEY THEMES**: 3-5 key terms from the chart title, axis labels, legend title, and field names. Focus on main metrics and categories.
+
+**5. DOMAIN**: Subject area inferred from URL path, field names, or title (e.g., "crime", "sales", "health", "economics").
+
+**6. LOCATION**: Geographic focus if identifiable from data URL, title, or field values (e.g., "Baltimore", "Los Angeles"). Null if none.
+
+**7. TEMPORAL FOCUS**: What time range does this chart filter to?
+- Examine the `transform` array for temporal filter operations.
+- Look for: `datum.year == 2023`, `month(datum.date) >= 0`, quarter filters, etc.
+- **CRITICAL: Vega-Lite `month()` is 0-indexed** (0=Jan, 1=Feb, ..., 11=Dec). Add 1 for calendar month.
+- Examples:
+  - `datum.year == 2023` → "2023"
+  - `quarter(datum.date) == 1` → "Q1"
+  - `month(datum.date) >= 0 && month(datum.date) <= 2` for year 2023 → "Jan - Mar 2023"
+- If no temporal filter → null (indicates full dataset)
+
+**8. ENCODED METRICS**: List the human-readable names of fields mapped to encoding channels (x, y, color, size, etc.).
+- Use axis titles if available, otherwise use field names.
+- For count aggregations, use "Count" or the axis title.
+- Examples: ["Crime Count", "Month"], ["Sales", "Region", "Product Category"]
+
+**9. SUMMARY**: 1-2 sentence description of what this chart visualizes, focusing on the data, visual encoding, and any notable aspects.
+
+---
+
+**Expected JSON Structure:**
+
+```json
+{example_json}
+```
+
+---
+
+**CONSISTENCY CHECK:**
+
+Before outputting, verify:
+1. item_type is a valid chart type (bar_chart, line_chart, scatter_plot, etc.)
+2. granularity is one of: overview, regional, detailed
+3. key_themes has 3-5 relevant terms
+4. encoded_metrics lists all encoded field names
+5. temporal_focus accounts for Vega-Lite 0-indexed months
+6. sentiment is null (charts don't have sentiment)
+
+---
+
+**FINAL OUTPUT:**
+
+Return ONLY the JSON object. No questions, no reasoning, no explanations.

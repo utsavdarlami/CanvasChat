@@ -1,0 +1,528 @@
+{
+    "query": "what are the entities present",
+    "user_id": "demo_user",
+    "session_id": "session_1771954972057",
+    "layout": {
+        "nodes": [
+            {
+                "entity_id": "entity-1769204937393-ee58c9b9",
+                "name": "trimmer_spec.txt",
+                "x": 400,
+                "y": 425,
+                "display_id": "yjs-515539227"
+            },
+            {
+                "entity_id": "entity-1769204957689-d11a37f5",
+                "name": "vortex_screen.txt",
+                "x": 1000,
+                "y": 425,
+                "display_id": "yjs-515539227"
+            },
+            {
+                "entity_id": "entity-1769204977831-5d6c0ef0",
+                "name": "vortex_specs.txt",
+                "x": 1600,
+                "y": 425,
+                "display_id": "yjs-515539227"
+            },
+            {
+                "entity_id": "entity-1769204999819-9cb5fd0c",
+                "name": "zenith_screen.txt",
+                "x": 400,
+                "y": 1075,
+                "display_id": "yjs-515539227"
+            },
+            {
+                "entity_id": "entity-1769205018115-79823ede",
+                "name": "zenith_specs.txt",
+                "x": 1000,
+                "y": 1075,
+                "display_id": "yjs-515539227"
+            }
+        ],
+        "links": [],
+        "graph": {
+            "metadata": {
+                "approach": "frontend_only",
+                "source": "entities_only_upload",
+                "entity_count": 5
+            }
+        }
+    },
+    "entities": [
+        {
+            "id": "entity-1769204937393-ee58c9b9",
+            "name": "trimmer_spec.txt",
+            "semantics": {
+                "title": "Amazon Trimmer Availability",
+                "description": "A brief document stating that the e-commerce platform Amazon offers trimmers for sale.",
+                "source_id": null,
+                "source_context": {
+                    "dataset_name": "General Notes",
+                    "location": "Global",
+                    "domain": "e-commerce",
+                    "description": "Brief notes about product availability on e-commerce platforms."
+                },
+                "structure_type": "brief",
+                "granularity": "summary",
+                "semantic_dimensions": [
+                    {
+                        "field": "organization",
+                        "type": "entity",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Amazon"
+                        ]
+                    },
+                    {
+                        "field": "topic",
+                        "type": "nominal",
+                        "cardinality": 2,
+                        "sample_values": [
+                            "e-commerce",
+                            "product availability"
+                        ]
+                    }
+                ],
+                "temporal_scope": {
+                    "type": "point",
+                    "date": "2025-01-23",
+                    "start": null,
+                    "end": null,
+                    "year": null,
+                    "quarter": null,
+                    "source": "document"
+                },
+                "keywords": [
+                    "Amazon",
+                    "trimmer",
+                    "buy",
+                    "e-commerce",
+                    "product",
+                    "retail"
+                ],
+                "entity_mentions": {
+                    "person": [],
+                    "location": [],
+                    "organization": [
+                        "Amazon"
+                    ],
+                    "identifier": []
+                },
+                "quantitative_profile": null,
+                "narrative_profile": {
+                    "summary": "This document, dated January 23, 2025, is a short statement indicating that the e-commerce company Amazon has many trimmers available for purchase.",
+                    "sentiment": "neutral",
+                    "document_date": "2025-01-23",
+                    "event_dates_mentioned": [
+                        "Jan 23, 2025"
+                    ]
+                }
+            },
+            "value": "Jan 23, 2025\n\nAmazon has lots of trimmer that you can buy. \n",
+            "type": "text"
+        },
+        {
+            "id": "entity-1769204957689-d11a37f5",
+            "name": "vortex_screen.txt",
+            "semantics": {
+                "title": "Vortex Raider 15 Display Features",
+                "description": "A technical description of the Vortex Raider 15's display, focusing on its performance for gaming, including refresh rate, resolution, color accuracy, and contrast.",
+                "source_id": "ProductReview_20251113.txt",
+                "source_context": {
+                    "dataset_name": "Product Reviews",
+                    "location": null,
+                    "domain": "technology",
+                    "description": "Brief technical descriptions and reviews of consumer electronics."
+                },
+                "structure_type": "entity_profile",
+                "granularity": "summary",
+                "semantic_dimensions": [
+                    {
+                        "field": "Display Technology",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "IPS"
+                        ]
+                    },
+                    {
+                        "field": "Refresh Rate",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "extremely high"
+                        ]
+                    },
+                    {
+                        "field": "Contrast Ratio",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "typical"
+                        ]
+                    },
+                    {
+                        "field": "Primary Use Case",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "competitive gaming"
+                        ]
+                    }
+                ],
+                "temporal_scope": {
+                    "type": "point",
+                    "date": "2025-11-13",
+                    "start": null,
+                    "end": null,
+                    "year": null,
+                    "quarter": null,
+                    "source": "document"
+                },
+                "keywords": [
+                    "Vortex Raider 15",
+                    "IPS display",
+                    "refresh rate",
+                    "gaming",
+                    "resolution",
+                    "color accuracy",
+                    "contrast ratio",
+                    "brightness"
+                ],
+                "entity_mentions": {
+                    "person": [],
+                    "location": [],
+                    "organization": [],
+                    "identifier": []
+                },
+                "quantitative_profile": null,
+                "narrative_profile": {
+                    "summary": "The document describes the display features of the Vortex Raider 15. It highlights its fast IPS panel with a high refresh rate and crisp resolution, making it suitable for competitive gaming. While colors are accurate, the contrast is typical for IPS technology, and brightness is adequate for indoor use.",
+                    "sentiment": "mixed",
+                    "document_date": "2025-11-13",
+                    "event_dates_mentioned": [
+                        "November 13, 2025"
+                    ]
+                }
+            },
+            "value": "November 13, 2025\n\nThe Vortex Raider 15 features a very fast IPS display with an extremely high refresh rate, ideal for competitive gaming. The resolution is crisp for its size. While the colors are accurate for gaming, the contrast ratio is typical for this technology, meaning deep blacks can look slightly grey in dark rooms. Brightness levels are sufficient for most indoor setups.",
+            "type": "text"
+        },
+        {
+            "id": "entity-1769204977831-5d6c0ef0",
+            "name": "vortex_specs.txt",
+            "semantics": {
+                "title": "Vortex Raider 15 Gaming Laptop Specifications",
+                "description": "A brief product profile of the Vortex Raider 15 gaming laptop, highlighting its key performance components and physical characteristics.",
+                "source_id": "Vortex_Raider_15_Profile_20251112.txt",
+                "source_context": {
+                    "dataset_name": "Product Descriptions",
+                    "location": null,
+                    "domain": "technology",
+                    "description": "Brief descriptions and specifications for consumer electronics products."
+                },
+                "structure_type": "entity_profile",
+                "granularity": "summary",
+                "semantic_dimensions": [
+                    {
+                        "field": "product_name",
+                        "type": "entity",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Vortex Raider 15"
+                        ]
+                    },
+                    {
+                        "field": "Processor",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Ryzen"
+                        ]
+                    },
+                    {
+                        "field": "Graphics Card",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "NVIDIA"
+                        ]
+                    },
+                    {
+                        "field": "attribute",
+                        "type": "nominal",
+                        "cardinality": 4,
+                        "sample_values": [
+                            "double memory",
+                            "massive storage",
+                            "heavy",
+                            "requires substantial power brick"
+                        ]
+                    }
+                ],
+                "temporal_scope": {
+                    "type": "point",
+                    "date": "2025-11-12",
+                    "start": null,
+                    "end": null,
+                    "year": null,
+                    "quarter": null,
+                    "source": "document"
+                },
+                "keywords": [
+                    "Vortex Raider 15",
+                    "gaming laptop",
+                    "high-performance",
+                    "Ryzen",
+                    "processor",
+                    "memory",
+                    "storage",
+                    "NVIDIA",
+                    "graphics card",
+                    "heavy",
+                    "power brick"
+                ],
+                "entity_mentions": {
+                    "person": [],
+                    "location": [],
+                    "organization": [
+                        "Ryzen",
+                        "NVIDIA"
+                    ],
+                    "identifier": []
+                },
+                "quantitative_profile": null,
+                "narrative_profile": {
+                    "summary": "This document provides a profile of the Vortex Raider 15, a high-performance gaming laptop. Key features include a top-tier Ryzen processor, double the standard memory, a large storage drive, and a dedicated NVIDIA graphics card. The laptop is noted to be heavy and requires a large power brick for optimal performance.",
+                    "sentiment": "mixed",
+                    "document_date": "2025-11-12",
+                    "event_dates_mentioned": [
+                        "November 12, 2025"
+                    ]
+                }
+            },
+            "value": "November 12, 2025\n\nThe Vortex Raider 15 is a high-performance gaming laptop that packs a punch with a top-tier Ryzen processor. It includes double the memory of standard ultrabooks and a massive storage drive. The standout feature is the dedicated NVIDIA graphics card, capable of running modern titles at high settings. It is noticeably heavy and requires a substantial power brick for peak performance.",
+            "type": "text"
+        },
+        {
+            "id": "entity-1769204999819-9cb5fd0c",
+            "name": "zenith_screen.txt",
+            "semantics": {
+                "title": "Review of the Zenith Book 14 Display",
+                "description": "This document reviews the display of the Zenith Book 14, highlighting its high-resolution OLED panel, professional color gamut, and impressive peak brightness suitable for creative work, while noting its standard refresh rate is better for office tasks than gaming.",
+                "source_id": "ZenithBook14_Review_20251113.txt",
+                "source_context": {
+                    "dataset_name": "Product Specifications",
+                    "location": null,
+                    "domain": "technology",
+                    "description": "Documents providing technical specifications or reviews of technology products."
+                },
+                "structure_type": "entity_profile",
+                "granularity": "summary",
+                "semantic_dimensions": [
+                    {
+                        "field": "product",
+                        "type": "entity",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Zenith Book 14"
+                        ]
+                    },
+                    {
+                        "field": "Display Feature",
+                        "type": "nominal",
+                        "cardinality": 5,
+                        "sample_values": [
+                            "OLED panel",
+                            "very high resolution",
+                            "professional color gamut",
+                            "peak brightness",
+                            "standard refresh rate"
+                        ]
+                    },
+                    {
+                        "field": "Intended Use",
+                        "type": "nominal",
+                        "cardinality": 3,
+                        "sample_values": [
+                            "creative work",
+                            "office tasks",
+                            "gaming"
+                        ]
+                    }
+                ],
+                "temporal_scope": {
+                    "type": "point",
+                    "date": "2025-11-13",
+                    "start": null,
+                    "end": null,
+                    "year": null,
+                    "quarter": null,
+                    "source": "document"
+                },
+                "keywords": [
+                    "Zenith Book 14",
+                    "OLED",
+                    "display",
+                    "panel",
+                    "resolution",
+                    "color gamut",
+                    "brightness",
+                    "refresh rate",
+                    "creative work",
+                    "office tasks"
+                ],
+                "entity_mentions": {
+                    "person": [],
+                    "location": [],
+                    "organization": [],
+                    "identifier": []
+                },
+                "quantitative_profile": null,
+                "narrative_profile": {
+                    "summary": "This document reviews the display of the Zenith Book 14. It highlights positive features such as a high-resolution OLED panel, full professional color gamut coverage, and high peak brightness, making it suitable for creative work. However, its standard refresh rate is noted as a drawback for gaming applications, though sufficient for office tasks.",
+                    "sentiment": "mixed",
+                    "document_date": "2025-11-13",
+                    "event_dates_mentioned": [
+                        "November 13, 2025"
+                    ]
+                }
+            },
+            "value": "November 13, 2025\n\nThe Zenith Book 14 features a stunning OLED panel running at very high resolution. It covers the entire professional color gamut, making it perfect for creative work. Peak brightness is impressive, remaining usable even in bright outdoor environments. The standard refresh rate is fine for office tasks but lacks the fluid motion found in gaming displays.",
+            "type": "text"
+        },
+        {
+            "id": "entity-1769205018115-79823ede",
+            "name": "zenith_specs.txt",
+            "semantics": {
+                "title": "Zenith Book 14 Business Ultrabook Specifications",
+                "description": "A brief product description for the Zenith Book 14, a premium business ultrabook, detailing its processor, memory, storage, and graphics capabilities.",
+                "source_id": "Zenith_Book_14_20251112.txt",
+                "source_context": {
+                    "dataset_name": "Product Descriptions",
+                    "location": "not specified",
+                    "domain": "technology",
+                    "description": "Brief product descriptions for consumer electronics."
+                },
+                "structure_type": "entity_profile",
+                "granularity": "summary",
+                "semantic_dimensions": [
+                    {
+                        "field": "Product Name",
+                        "type": "nominal",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Zenith Book 14"
+                        ]
+                    },
+                    {
+                        "field": "Component",
+                        "type": "nominal",
+                        "cardinality": 4,
+                        "sample_values": [
+                            "Intel Ultra processor",
+                            "soldered memory",
+                            "solid state drive",
+                            "integrated graphics"
+                        ]
+                    },
+                    {
+                        "field": "organization",
+                        "type": "entity",
+                        "cardinality": 1,
+                        "sample_values": [
+                            "Intel"
+                        ]
+                    },
+                    {
+                        "field": "Intended Use",
+                        "type": "nominal",
+                        "cardinality": 2,
+                        "sample_values": [
+                            "office productivity",
+                            "not for heavy 3D rendering"
+                        ]
+                    }
+                ],
+                "temporal_scope": {
+                    "type": "point",
+                    "date": "2025-11-12",
+                    "start": null,
+                    "end": null,
+                    "year": null,
+                    "quarter": null,
+                    "source": "document"
+                },
+                "keywords": [
+                    "Zenith Book 14",
+                    "ultrabook",
+                    "business laptop",
+                    "Intel Ultra processor",
+                    "integrated graphics",
+                    "soldered memory",
+                    "solid state drive",
+                    "office productivity",
+                    "efficiency"
+                ],
+                "entity_mentions": {
+                    "person": [],
+                    "location": [],
+                    "organization": [
+                        "Intel"
+                    ],
+                    "identifier": []
+                },
+                "quantitative_profile": null,
+                "narrative_profile": {
+                    "summary": "The document describes the Zenith Book 14, a premium business ultrabook. It features the latest Intel Ultra processor, soldered memory, and a fast solid state drive. The device uses integrated graphics, making it suitable for office tasks but not for heavy 3D rendering.",
+                    "sentiment": "neutral",
+                    "document_date": "2025-11-12",
+                    "event_dates_mentioned": [
+                        "November 12, 2025"
+                    ]
+                }
+            },
+            "value": "November 12, 2025\n\nThe Zenith Book 14 is a premium business ultrabook powered by the latest Intel Ultra processor optimized for efficiency. It comes with ample memory soldered to the board and a very fast solid state drive. It lacks a dedicated graphics chip, relying on integrated graphics, which is perfectly suitable for office productivity but not for heavy 3D rendering.",
+            "type": "text"
+        }
+    ],
+    "display_context": {
+        "is_multi_display": true,
+        "local_peer_id": "yjs-515539227",
+        "virtual_desktop": {
+            "total_width": 3110,
+            "total_height": 750,
+            "displays": [
+                {
+                    "peer_id": "yjs-515539227",
+                    "tags": [
+                        "left"
+                    ],
+                    "x": 0,
+                    "y": 0,
+                    "width": 1536,
+                    "height": 718,
+                    "node_ids": [
+                        "entity-1769204937393-ee58c9b9",
+                        "entity-1769204957689-d11a37f5",
+                        "entity-1769204977831-5d6c0ef0",
+                        "entity-1769204999819-9cb5fd0c",
+                        "entity-1769205018115-79823ede"
+                    ]
+                },
+                {
+                    "peer_id": "yjs-3282565469",
+                    "tags": [
+                        "right"
+                    ],
+                    "x": 1574,
+                    "y": 0,
+                    "width": 1536,
+                    "height": 750,
+                    "node_ids": []
+                }
+            ]
+        }
+    }
+}}

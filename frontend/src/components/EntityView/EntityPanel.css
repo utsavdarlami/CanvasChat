@@ -1,0 +1,626 @@
+/* Design Tokens */
+@import '../../styles/tokens.css';
+
+.entity-panel-content {
+  padding: var(--space-5);
+  height: 100%;
+  overflow-y: auto;
+  color: #333;
+  font-family: var(--font-mono);
+  font-size: var(--node-font-size, 18px);
+  display: flex;
+  flex-direction: column;
+}
+
+.entity-header {
+  margin-bottom: var(--space-6);
+}
+
+.entity-header h3 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  color: #333;
+  font-weight: var(--font-weight-bold);
+}
+
+.entity-id {
+  font-size: var(--node-font-size, var(--font-size-lg));
+  color: #666;
+  display: block;
+  margin-top: var(--space-1);
+}
+
+.entity-section {
+  margin-bottom: var(--space-3);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.entity-section h4 {
+  font-size: var(--node-font-size, var(--font-size-lg));
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 var(--space-2) 0;
+  font-weight: var(--font-weight-bold);
+}
+
+.position-display {
+  color: #444;
+}
+
+.cluster-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cluster-item {
+  color: #444;
+}
+
+.metadata-dump {
+  background-color: #f5f5f5;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: var(--font-size-sm);
+  color: #333;
+  border: 1px solid #eee;
+}
+
+.lazy-vega-chart {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.lazy-vega-chart__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px dashed #d0d7de;
+  border-radius: var(--radius-lg);
+  color: #6b7280;
+  font-size: var(--font-size-sm);
+  background: repeating-linear-gradient(
+    -45deg,
+    #f8fafc,
+    #f8afc 10px,
+    #f1f5f9 10px,
+    #f1f5f9 20px
+  );
+}
+
+.lazy-vega-chart__snapshot {
+  position: relative;
+  width: 100%;
+}
+
+.lazy-vega-chart__snapshot img {
+  border-radius: var(--radius-lg);
+  opacity: 1;
+}
+
+.lazy-vega-chart__snapshot-overlay {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: var(--font-size-xs);
+  color: #6b7280;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Entity Node Container */
+.entity-node-container {
+  position: relative;
+  border: 1px solid #777;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-primary);
+  min-width: 200px;
+  min-height: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.entity-node-container.selected {
+  box-shadow: 0 0 0 2px var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.entity-node-container.agent-highlighted {
+  border-color: var(--agent-highlight-color, #f59e0b);
+  box-shadow: 0 0 0 2px var(--agent-highlight-color, #f59e0b);
+}
+
+.entity-node-container.agent-dimmed {
+  opacity: 0.45;
+  filter: grayscale(0.25);
+}
+
+/* ---------------------------------------------------------------------------
+ * Gather animation: CSS-only animation to group centroids
+ *
+ * When grouping nodes, nodes animate to their group centroid via CSS transform.
+ * This is a visual-only effect - store positions are NOT modified during the
+ * gather phase. After the animation, nodes settle to their final positions.
+ * --------------------------------------------------------------------------- */
+.entity-node-container.gathering {
+  /* Slight scale down during gather to emphasize the grouping effect */
+  z-index: 100;
+}
+
+/* When gather ends (transform removed), transition back smoothly */
+.entity-node-container:not(.gathering) {
+  transition: transform 350ms ease-out, box-shadow 150ms, border-color 150ms;
+}
+
+.entity-node-content-wrapper {
+  padding: var(--space-4);
+  padding-top: calc(var(--space-4) + var(--entity-tags-offset, 0px));
+  overflow: auto;
+  flex: 1;
+}
+
+/* ---------------------------------------------------------------------------
+ * Layout animation: smooth position transitions
+ *
+ * When the agent computes a layout (grouping, semantic layout), nodes animate
+ * between positions via CSS transitions on React Flow's transform property.
+ * Disabled during user drag to prevent lag.
+ * --------------------------------------------------------------------------- */
+.react-flow__node {
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.react-flow__node.dragging {
+  transition: none !important;
+}
+
+/* Disable transition for real-time cross-display updates (mouse-based).
+ * These update rapidly via Yjs awareness — animation would cause lag. */
+.react-flow__node.drag-mirror,
+.react-flow__node.transfer-preview {
+  transition: none !important;
+}
+
+/* Group drag fix: React Flow only adds .dragging to the primary node,
+ * but all .selected nodes move together. Disable transition on selected
+ * nodes when ANY node is being dragged (detected via container class). */
+.react-flow.dragging .react-flow__node.selected {
+  transition: none !important;
+}
+
+/* Prevent accidental browser text highlight while lasso (shift-box) selecting. */
+.react-flow.selecting .entity-node-content-wrapper,
+.react-flow.selecting .entity-node-content-wrapper * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Cross-display transfer animations
+ *
+ * These classes are applied to React Flow node wrappers (.react-flow__node)
+ * during cross-display Ctrl+drag transfers. They animate the node sliding
+ * to/from the viewport boundary while fading out/in.
+ *
+ * IMPORTANT: We use .react-flow__node selectors so the CSS transition applies
+ * to the wrapper's `transform` (which React Flow uses for positioning), not
+ * to anything inside the node component itself.
+ * --------------------------------------------------------------------------- */
+
+/* Exit animation (sender side): node slides to viewport edge and fades out.
+ * React Flow positions nodes via `transform: translate(x, y)` on .react-flow__node.
+ * We transition that transform plus opacity. The position is updated in JS
+ * to the exit-edge coordinates; the CSS transition animates the movement. */
+.react-flow__node.transfer-exit {
+  transition: transform 250ms ease-in, opacity 250ms ease-in !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+}
+
+/* Entry animation (receiver side): two-phase approach.
+ *
+ * Phase 1 (.transfer-enter-start): node is placed at the entry edge,
+ * invisible. No transition yet — we need it to render at the edge first.
+ *
+ * Phase 2 (.transfer-enter): transition is enabled, position is updated
+ * to the final resting point. The CSS transition animates the slide-in. */
+.react-flow__node.transfer-enter-start {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+}
+
+.react-flow__node.transfer-enter {
+  transition: transform 300ms ease-out, opacity 300ms ease-out !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  z-index: 1000 !important;
+}
+
+/* Live drag preview (receiver side): semi-transparent ghost node that follows
+ * the drag position in real-time. Non-interactive, dashed border. */
+.react-flow__node.transfer-preview {
+  opacity: 0.4 !important;
+  pointer-events: none !important;
+  z-index: 999 !important;
+}
+
+.react-flow__node.transfer-preview .entity-node-container {
+  border-style: dashed !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Commit transition (receiver side): ghost becomes a real node.
+ * Animates opacity from 0.4 → 1.0 over 200ms. */
+.react-flow__node.transfer-commit {
+  transition: opacity 200ms ease-out !important;
+  opacity: 1 !important;
+  z-index: 1000 !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * Drag mirror: live shadow on adjacent display
+ *
+ * When a node is being dragged near the boundary between two displays,
+ * the adjacent display renders a semi-transparent shadow that follows the
+ * drag in real-time. This gives the seamless "half on each screen" visual
+ * without requiring Ctrl or any transfer intent.
+ * --------------------------------------------------------------------------- */
+.react-flow__node.drag-mirror {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+  z-index: 998 !important;
+}
+
+.react-flow__node.drag-mirror .entity-node-container {
+  border-style: solid !important;
+  border-color: #94a3b8 !important; /* slate-400, neutral/subtle */
+}
+
+/* Entity image */
+.entity-image-container {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.entity-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  user-select: none;
+}
+
+/* Entity text markdown */
+.entity-text-markdown {
+  font-size: var(--node-font-size, var(--font-size-md));
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.entity-text-markdown--selectable {
+  cursor: text;
+  user-select: text;
+}
+
+.entity-text-markdown--locked {
+  cursor: grab;
+  user-select: none;
+}
+
+.entity-text-markdown--locked:active {
+  cursor: grabbing;
+}
+
+.entity-text-markdown > :first-child {
+  margin-top: 0;
+}
+
+.entity-text-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.entity-text-markdown p {
+  margin: 0.35em 0;
+  white-space: pre-wrap;
+}
+
+.entity-text-markdown ul,
+.entity-text-markdown ol {
+  padding-left: 1.4em;
+  margin: 0.35em 0;
+}
+
+.entity-text-markdown li + li {
+  margin-top: 0.15em;
+}
+
+.entity-text-markdown h1,
+.entity-text-markdown h2,
+.entity-text-markdown h3,
+.entity-text-markdown h4,
+.entity-text-markdown h5,
+.entity-text-markdown h6 {
+  margin: 0.5em 0 0.25em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.entity-text-markdown h1 { font-size: 1.3em; }
+.entity-text-markdown h2 { font-size: 1.15em; }
+.entity-text-markdown h3 { font-size: 1em; }
+.entity-text-markdown h4,
+.entity-text-markdown h5,
+.entity-text-markdown h6 { font-size: 1em; }
+
+.entity-text-markdown code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+}
+
+.entity-text-markdown pre {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.5em;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: 0.35em 0;
+}
+
+.entity-text-markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+.entity-text-markdown blockquote {
+  border-left: 3px solid #d0d0d0;
+  margin: 0.35em 0;
+  padding: 0.2em 0.6em;
+  color: #666;
+}
+
+/* ── Entity Panel Content ────────────────────────────────────── */
+.entity-type-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.entity-type-row h4 {
+  margin: 0;
+}
+
+.clear-highlights-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--color-text-muted, #a1a1aa);
+  cursor: pointer;
+  transition: background-color var(--transition-fast, 0.15s ease), color var(--transition-fast, 0.15s ease);
+}
+
+.clear-highlights-btn:hover {
+  background: var(--color-error-light, #fee2e2);
+  color: var(--color-error, #ef4444);
+}
+
+.clear-highlights-btn:active {
+  background: var(--color-error-border, #fca5a5);
+  color: var(--color-error-dark, #b91c1c);
+}
+
+/* ── Text Highlights ────────────────────────────────────────── */
+.text-highlight {
+  background-color: #fde68a;
+  border-radius: 2px;
+  padding: 0 1px;
+  color: inherit;
+}
+
+/* ── Text Selection Toolbar ─────────────────────────────────── */
+.text-selection-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  background: var(--color-bg-primary, #fff);
+  border: 1px solid var(--color-border, #e4e4e7);
+  border-radius: var(--radius-md, 6px);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04));
+  pointer-events: auto;
+  user-select: none;
+  animation: toolbar-fade-in 120ms ease-out;
+}
+
+@keyframes toolbar-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) translateY(0);
+  }
+}
+
+.text-selection-toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--color-text-secondary, #71717a);
+  cursor: pointer;
+  transition: background-color var(--transition-fast, 0.15s ease), color var(--transition-fast, 0.15s ease);
+}
+
+.text-selection-toolbar-btn:hover {
+  background: var(--color-bg-tertiary, #f4f4f5);
+  color: var(--color-text-primary, #18181b);
+}
+
+.text-selection-toolbar-btn:active {
+  background: var(--color-gray-200, #e4e4e7);
+}
+
+/* In-canvas entity tags (chips + add/remove when node selected) */
+.entity-node-tags {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.entity-node-tags__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-start;
+  max-width: calc(100% - 64px);
+  pointer-events: auto;
+}
+
+.entity-node-tags__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  max-width: 100%;
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px 4px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  line-height: 18px;
+}
+
+.entity-node-tags__chip-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.entity-node-tags__chip-remove {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0 3px;
+  border: none;
+  background: transparent;
+  color: #047857;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.entity-node-tags__chip-remove:hover {
+  background: rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+.entity-node-tags__controls {
+  position: relative;
+  pointer-events: auto;
+}
+
+.entity-node-tags__toggle-btn {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+  color: #047857;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.entity-node-tags__toggle-btn:hover {
+  background: rgba(16, 185, 129, 0.16);
+}
+
+.entity-node-tags__overlay {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 240px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.entity-node-tags__add-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.entity-node-tags__input {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+  color: #065f46;
+  font-family: inherit;
+}
+
+.entity-node-tags__input::placeholder {
+  color: rgba(5, 95, 70, 0.45);
+}
+
+.entity-node-tags__add-btn {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.entity-node-tags__add-btn:hover {
+  background: rgba(16, 185, 129, 0.28);
+}

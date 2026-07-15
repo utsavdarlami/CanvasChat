@@ -1,0 +1,484 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "partitions": {
+      "surface_0": [
+        {
+          "bounds": {
+            "min_x": 0.0,
+            "min_y": 0.0,
+            "max_x": 30.0,
+            "max_y": 20.0
+          },
+          "depth": 0,
+          "node_type": "leaf",
+          "layout_type": "RADIAL",
+          "num_entities": 17,
+          "entity_ids": [
+            "entity-1768915803825-84826eb7",
+            "entity-1768915803825-de64e878",
+            "entity-1768915803825-9ef59ea4",
+            "entity-1768915803825-6e6827d0",
+            "entity-1768915803825-66d70e8d",
+            "entity-1768915803825-ae5a05ed",
+            "entity-1768915803825-a028d34b",
+            "entity-1768915803825-a26039f3",
+            "entity-1768915803825-635cab1c",
+            "entity-1768915803825-5cf53491",
+            "entity-1768915803825-b06e26a4",
+            "entity-1768915803826-171a7ccb",
+            "entity-1768915803826-13eb2c41",
+            "entity-1768915803826-227428c8",
+            "entity-1768915803826-ebfb13bb",
+            "entity-1768915803826-bda11809",
+            "entity-1768915803826-cc12550c"
+          ],
+          "label": "Radial Analysis Layout (17)",
+          "regions": [
+            {
+              "id": "region_Furry_0",
+              "label": "Furry",
+              "points": [
+                {
+                  "x": 18.663276206726895,
+                  "y": 10.74599068880571
+                },
+                {
+                  "x": 13.561414613873318,
+                  "y": 6.699928472468703
+                },
+                {
+                  "x": 14.489480578291353,
+                  "y": 6.75759182851571
+                },
+                {
+                  "x": 19.116917235977688,
+                  "y": 7.977019701547571
+                }
+              ],
+              "member_ids": [
+                "entity-1768915803825-a028d34b",
+                "entity-1768915803825-5cf53491",
+                "entity-1768915803825-b06e26a4",
+                "entity-1768915803826-171a7ccb",
+                "entity-1768915803826-13eb2c41",
+                "entity-1768915803826-ebfb13bb",
+                "entity-1768915803826-cc12550c"
+              ]
+            },
+            {
+              "id": "region_Big_1",
+              "label": "Big",
+              "points": [
+                {
+                  "x": 12.01667325270902,
+                  "y": 12.113315631777736
+                },
+                {
+                  "x": 15.189292518460636,
+                  "y": 7.276151059021199
+                },
+                {
+                  "x": 16.00080889427015,
+                  "y": 7.480379410682703
+                },
+                {
+                  "x": 19.35028161990093,
+                  "y": 10.123436436256428
+                },
+                {
+                  "x": 13.393098255416394,
+                  "y": 13.355036033078356
+                },
+                {
+                  "x": 12.630409254702544,
+                  "y": 12.842604777446764
+                }
+              ],
+              "member_ids": [
+                "entity-1768915803825-de64e878",
+                "entity-1768915803825-ae5a05ed",
+                "entity-1768915803825-a028d34b",
+                "entity-1768915803825-a26039f3",
+                "entity-1768915803825-635cab1c",
+                "entity-1768915803825-b06e26a4",
+                "entity-1768915803826-13eb2c41"
+              ]
+            },
+            {
+              "id": "region_Swims_2",
+              "label": "Swims",
+              "points": [
+                {
+                  "x": 11.716529708103263,
+                  "y": 11.200684764690893
+                },
+                {
+                  "x": 16.00080889427015,
+                  "y": 7.480379410682703
+                },
+                {
+                  "x": 18.663276206726895,
+                  "y": 10.74599068880571
+                },
+                {
+                  "x": 13.393098255416394,
+                  "y": 13.355036033078356
+                },
+                {
+                  "x": 11.88263611793501,
+                  "y": 13.13745571234761
+                }
+              ],
+              "member_ids": [
+                "entity-1768915803825-de64e878",
+                "entity-1768915803825-a26039f3",
+                "entity-1768915803825-635cab1c",
+                "entity-1768915803826-171a7ccb",
+                "entity-1768915803826-13eb2c41",
+                "entity-1768915803826-227428c8",
+                "entity-1768915803826-bda11809"
+              ]
+            },
+            {
+              "id": "region_Fierce_3",
+              "label": "Fierce",
+              "points": [
+                {
+                  "x": 15.49242945430544,
+                  "y": 6.392544907999975
+                },
+                {
+                  "x": 16.00080889427015,
+                  "y": 7.480379410682703
+                },
+                {
+                  "x": 12.630409254702544,
+                  "y": 12.842604777446764
+                },
+                {
+                  "x": 12.01667325270902,
+                  "y": 12.113315631777736
+                },
+                {
+                  "x": 13.561414613873318,
+                  "y": 6.699928472468703
+                }
+              ],
+              "member_ids": [
+                "entity-1768915803825-9ef59ea4",
+                "entity-1768915803825-a028d34b",
+                "entity-1768915803825-a26039f3",
+                "entity-1768915803825-635cab1c",
+                "entity-1768915803825-5cf53491",
+                "entity-1768915803826-13eb2c41",
+                "entity-1768915803826-cc12550c"
+              ]
+            },
+            {
+              "id": "region_Solitary_4",
+              "label": "Solitary",
+              "points": [
+                {
+                  "x": 19.35028161990093,
+                  "y": 10.123436436256428
+                },
+                {
+                  "x": 13.393098255416394,
+                  "y": 13.355036033078356
+                },
+                {
+                  "x": 14.489480578291353,
+                  "y": 6.75759182851571
+                },
+                {
+                  "x": 15.49242945430544,
+                  "y": 6.392544907999975
+                }
+              ],
+              "member_ids": [
+                "entity-1768915803825-de64e878",
+                "entity-1768915803825-9ef59ea4",
+                "entity-1768915803825-ae5a05ed",
+                "entity-1768915803825-a028d34b",
+                "entity-1768915803825-5cf53491",
+                "entity-1768915803825-b06e26a4",
+                "entity-1768915803826-13eb2c41"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "approach": "heuristic_layout",
+      "layer_3_method": "graph_distribution",
+      "entity_count": 17,
+      "relationship_count": 0,
+      "cluster_count": 1,
+      "surfaces": 1,
+      "layout_strategies": {
+        "surface_0": "spring_layout"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "name": "bat.txt",
+      "display_name": "bat.txt",
+      "entity_id": "entity-1768915803825-84826eb7",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 16.441016591399098,
+      "y": 6.5813480339026995,
+      "id": "entity-1768915803825-84826eb7"
+    },
+    {
+      "name": "blue_whale.txt",
+      "display_name": "blue_whale.txt",
+      "entity_id": "entity-1768915803825-de64e878",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 13.393098255416394,
+      "y": 13.355036033078356,
+      "id": "entity-1768915803825-de64e878"
+    },
+    {
+      "name": "bobcat.txt",
+      "display_name": "bobcat.txt",
+      "entity_id": "entity-1768915803825-9ef59ea4",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 15.49242945430544,
+      "y": 6.392544907999975,
+      "id": "entity-1768915803825-9ef59ea4"
+    },
+    {
+      "name": "cow.txt",
+      "display_name": "cow.txt",
+      "entity_id": "entity-1768915803825-6e6827d0",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 18.081919474580282,
+      "y": 13.79103896495874,
+      "id": "entity-1768915803825-6e6827d0"
+    },
+    {
+      "name": "deer.txt",
+      "display_name": "deer.txt",
+      "entity_id": "entity-1768915803825-66d70e8d",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 17.648019044236094,
+      "y": 12.438851192951912,
+      "id": "entity-1768915803825-66d70e8d"
+    },
+    {
+      "name": "giraffe.txt",
+      "display_name": "giraffe.txt",
+      "entity_id": "entity-1768915803825-ae5a05ed",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 19.35028161990093,
+      "y": 10.123436436256428,
+      "id": "entity-1768915803825-ae5a05ed"
+    },
+    {
+      "name": "grizzly_bear.txt",
+      "display_name": "grizzly_bear.txt",
+      "entity_id": "entity-1768915803825-a028d34b",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 15.189292518460636,
+      "y": 7.276151059021199,
+      "id": "entity-1768915803825-a028d34b"
+    },
+    {
+      "name": "hippopotamus.txt",
+      "display_name": "hippopotamus.txt",
+      "entity_id": "entity-1768915803825-a26039f3",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 12.630409254702544,
+      "y": 12.842604777446764,
+      "id": "entity-1768915803825-a26039f3"
+    },
+    {
+      "name": "killer_whale.txt",
+      "display_name": "killer_whale.txt",
+      "entity_id": "entity-1768915803825-635cab1c",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 12.01667325270902,
+      "y": 12.113315631777736,
+      "id": "entity-1768915803825-635cab1c"
+    },
+    {
+      "name": "leopard.txt",
+      "display_name": "leopard.txt",
+      "entity_id": "entity-1768915803825-5cf53491",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 14.489480578291353,
+      "y": 6.75759182851571,
+      "id": "entity-1768915803825-5cf53491"
+    },
+    {
+      "name": "moose.txt",
+      "display_name": "moose.txt",
+      "entity_id": "entity-1768915803825-b06e26a4",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 18.100417709047953,
+      "y": 9.309076395434555,
+      "id": "entity-1768915803825-b06e26a4"
+    },
+    {
+      "name": "otter.txt",
+      "display_name": "otter.txt",
+      "entity_id": "entity-1768915803826-171a7ccb",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 18.663276206726895,
+      "y": 10.74599068880571,
+      "id": "entity-1768915803826-171a7ccb"
+    },
+    {
+      "name": "polar_bear.txt",
+      "display_name": "polar_bear.txt",
+      "entity_id": "entity-1768915803826-13eb2c41",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 16.00080889427015,
+      "y": 7.480379410682703,
+      "id": "entity-1768915803826-13eb2c41"
+    },
+    {
+      "name": "seal.txt",
+      "display_name": "seal.txt",
+      "entity_id": "entity-1768915803826-227428c8",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 11.88263611793501,
+      "y": 13.13745571234761,
+      "id": "entity-1768915803826-227428c8"
+    },
+    {
+      "name": "squirrel.txt",
+      "display_name": "squirrel.txt",
+      "entity_id": "entity-1768915803826-ebfb13bb",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 19.116917235977688,
+      "y": 7.977019701547571,
+      "id": "entity-1768915803826-ebfb13bb"
+    },
+    {
+      "name": "walrus.txt",
+      "display_name": "walrus.txt",
+      "entity_id": "entity-1768915803826-bda11809",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 11.716529708103263,
+      "y": 11.200684764690893,
+      "id": "entity-1768915803826-bda11809"
+    },
+    {
+      "name": "wolf.txt",
+      "display_name": "wolf.txt",
+      "entity_id": "entity-1768915803826-cc12550c",
+      "clusters": [
+        {
+          "cluster_id": "cluster-animal-attributes",
+          "cluster_type": "dimensional_ordering",
+          "cohesion_score": 1.0
+        }
+      ],
+      "x": 13.561414613873318,
+      "y": 6.699928472468703,
+      "id": "entity-1768915803826-cc12550c"
+    }
+  ],
+  "links": []
+}

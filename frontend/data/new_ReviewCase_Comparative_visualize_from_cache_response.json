@@ -1,0 +1,256 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "partitions": {
+      "surface_0": [
+        {
+          "bounds": {
+            "min_x": 0.0,
+            "min_y": 0.0,
+            "max_x": 30.0,
+            "max_y": 20.0
+          },
+          "depth": 0,
+          "node_type": "branch",
+          "dimension": "COMPARATIVE_PARALLEL",
+          "axis": "X",
+          "num_entities": 4,
+          "entity_ids": [
+            "entity-1768936770870-986aa50b",
+            "entity-1768936750450-5026fe73",
+            "entity-1768936815541-9d437de2",
+            "entity-1768936793118-af427781"
+          ],
+          "label": "Comparative Analysis (2 partitions)"
+        },
+        {
+          "bounds": {
+            "min_x": 0.0,
+            "min_y": 0.0,
+            "max_x": 14.0,
+            "max_y": 20.0
+          },
+          "depth": 1,
+          "node_type": "leaf",
+          "layout_type": "CLUSTER",
+          "num_entities": 2,
+          "entity_ids": [
+            "entity-1768936770870-986aa50b",
+            "entity-1768936750450-5026fe73"
+          ],
+          "label": "Product Descriptions \u00b7 Hierarchical (2)"
+        },
+        {
+          "bounds": {
+            "min_x": 16.0,
+            "min_y": 0.0,
+            "max_x": 30.0,
+            "max_y": 20.0
+          },
+          "depth": 1,
+          "node_type": "leaf",
+          "layout_type": "CLUSTER",
+          "num_entities": 2,
+          "entity_ids": [
+            "entity-1768936815541-9d437de2",
+            "entity-1768936793118-af427781"
+          ],
+          "label": "Product Specifications \u00b7 Hierarchical (2)"
+        }
+      ]
+    },
+    "metadata": {
+      "approach": "heuristic_layout",
+      "layer_3_method": "graph_distribution",
+      "entity_count": 4,
+      "relationship_count": 4,
+      "cluster_count": 3,
+      "surfaces": 1,
+      "layout_strategies": {
+        "surface_0": "context_stack"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "name": "vortex_screen.txt",
+      "display_name": "vortex_screen.txt",
+      "entity_id": "entity-1768936750450-5026fe73",
+      "clusters": [
+        {
+          "cluster_id": "cluster-vortex-product",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.98
+        },
+        {
+          "cluster_id": "cluster-laptop-comparison",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 7.0,
+      "y": 13.0,
+      "id": "entity-1768936750450-5026fe73"
+    },
+    {
+      "name": "vortex_specs.txt",
+      "display_name": "vortex_specs.txt",
+      "entity_id": "entity-1768936770870-986aa50b",
+      "clusters": [
+        {
+          "cluster_id": "cluster-vortex-product",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.98
+        },
+        {
+          "cluster_id": "cluster-laptop-comparison",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 7.0,
+      "y": 4.0,
+      "id": "entity-1768936770870-986aa50b"
+    },
+    {
+      "name": "zenith_screen.txt",
+      "display_name": "zenith_screen.txt",
+      "entity_id": "entity-1768936793118-af427781",
+      "clusters": [
+        {
+          "cluster_id": "cluster-zenith-product",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.98
+        },
+        {
+          "cluster_id": "cluster-laptop-comparison",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 23.0,
+      "y": 13.0,
+      "id": "entity-1768936793118-af427781"
+    },
+    {
+      "name": "zenith_specs.txt",
+      "display_name": "zenith_specs.txt",
+      "entity_id": "entity-1768936815541-9d437de2",
+      "clusters": [
+        {
+          "cluster_id": "cluster-zenith-product",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.98
+        },
+        {
+          "cluster_id": "cluster-laptop-comparison",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 23.0,
+      "y": 4.0,
+      "id": "entity-1768936815541-9d437de2"
+    }
+  ],
+  "links": [
+    {
+      "relationship_type": "comparative_parallel",
+      "strength": "strong",
+      "confidence": 0.98,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.98,
+      "shared_fields": [
+        "display_attribute",
+        "Feature",
+        "temporal_scope"
+      ],
+      "shared_fields_count": 3,
+      "reasoning": "Both entities analyze laptop displays with similar semantic dimensions (resolution, refresh rate) and an identical temporal scope, but for different products (Vortex vs. Zenith), enabling a direct comparison.",
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "side_by_side_comparison"
+      },
+      "source_name": "vortex_screen.txt",
+      "target_name": "zenith_screen.txt",
+      "source": "entity-1768936750450-5026fe73",
+      "target": "entity-1768936793118-af427781"
+    },
+    {
+      "relationship_type": "hierarchical_detail",
+      "strength": "strong",
+      "confidence": 0.95,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 0.95,
+      "shared_fields": [
+        "product_name"
+      ],
+      "shared_fields_count": 1,
+      "reasoning": "Entity with hardware specs provides the general product profile for the Vortex Raider 15, while the other entity provides a detailed analysis of a specific component (the display).",
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": true,
+        "recommended_interaction": "drill_down"
+      },
+      "source_name": "vortex_specs.txt",
+      "target_name": "vortex_screen.txt",
+      "source": "entity-1768936770870-986aa50b",
+      "target": "entity-1768936750450-5026fe73"
+    },
+    {
+      "relationship_type": "comparative_parallel",
+      "strength": "strong",
+      "confidence": 0.98,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.98,
+      "shared_fields": [
+        "processor_brand",
+        "graphics_card_brand",
+        "temporal_scope"
+      ],
+      "shared_fields_count": 3,
+      "reasoning": "Both entities are hardware specification profiles for different laptops (Vortex vs. Zenith) with identical structure types and temporal scopes, facilitating a direct comparison of product specs.",
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "side_by_side_comparison"
+      },
+      "source_name": "vortex_specs.txt",
+      "target_name": "zenith_specs.txt",
+      "source": "entity-1768936770870-986aa50b",
+      "target": "entity-1768936815541-9d437de2"
+    },
+    {
+      "relationship_type": "hierarchical_detail",
+      "strength": "strong",
+      "confidence": 0.95,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 0.95,
+      "shared_fields": [
+        "Product Name",
+        "Product"
+      ],
+      "shared_fields_count": 2,
+      "reasoning": "Entity with hardware specifications provides the overall profile for the Zenith Book 14, while the other entity offers a detailed review of its display component.",
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": true,
+        "recommended_interaction": "drill_down"
+      },
+      "source_name": "zenith_specs.txt",
+      "target_name": "zenith_screen.txt",
+      "source": "entity-1768936815541-9d437de2",
+      "target": "entity-1768936793118-af427781"
+    }
+  ]
+}

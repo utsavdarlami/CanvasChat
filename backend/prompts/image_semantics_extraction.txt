@@ -1,0 +1,79 @@
+You are an expert in visual media analysis. Analyze the provided image and extract key semantic properties into a JSON object.
+
+**CRITICAL INSTRUCTIONS:**
+1. Return ONLY a valid JSON object — no explanations, no reasoning.
+2. The JSON MUST match the "Expected JSON Structure" below exactly.
+3. Extract ONLY observable facts from the image.
+
+---
+
+**IMAGE METADATA (if available):**
+```
+{metadata}
+```
+
+---
+
+**EXTRACTION GUIDE**
+
+Answer these questions mentally, then output JSON:
+
+**1. TITLE**: Identify what the image depicts. If text is visible (movie title, poster text, signage), extract it as the title. Otherwise generate a concise descriptive title (max 60 chars).
+
+**2. ITEM TYPE**: Classify the image:
+- "movie_poster": Film or show promotional artwork
+- "photograph": Real-world photograph
+- "illustration": Drawn or painted artwork
+- "album_cover": Music album artwork
+- "infographic": Data-bearing visual
+- "diagram": Technical or architectural diagram
+- "screenshot": UI or application capture
+- "map": Geographic or spatial representation
+- "logo": Brand or organizational mark
+
+**3. GRANULARITY**: Visual complexity:
+- "overview": Simple image — single icon, logo, or minimal subject
+- "summary": Single subject with some background or context
+- "detailed": Multiple subjects, rich scene, or layered composition
+- "comprehensive": Dense with text, data, many elements, or complex scene
+
+**4. SENTIMENT**: Overall mood and tone of the imagery:
+- "positive": Bright, uplifting, cheerful, hopeful
+- "negative": Dark, ominous, threatening, sad
+- "neutral": Informational, neutral tone
+- "mixed": Combination of moods
+
+**5. KEY THEMES**: Identify 3-8 key terms describing visual content, subjects, mood, style, prominent colors, and recognizable elements. These enable thematic clustering with other entities.
+
+**6. DOMAIN**: Subject area inferred from visual content — e.g., "entertainment", "crime", "nature", "technology", "sports", "science", "art".
+
+**7. LOCATION**: Geographic setting if identifiable from the image (landmarks, text, setting), else null.
+
+**8. TEMPORAL FOCUS**: Time period if identifiable from visual cues (costume, setting, visible text/dates, art style), else null. Format as: "1972", "2020s", "1940s".
+
+**9. SUMMARY**: 1-2 sentence description of what the image depicts, including key visual elements, subjects, and composition.
+
+---
+
+**Expected JSON Structure:**
+
+```json
+{example_json}
+```
+
+---
+
+**CONSISTENCY CHECK:**
+
+Before outputting, verify:
+1. item_type matches one of the valid image types listed above
+2. granularity is one of: overview, summary, detailed, comprehensive
+3. key_themes has 3-8 items
+4. encoded_metrics is an empty array (images have no encoded metrics)
+5. sentiment reflects the visual mood, not assumed narrative
+
+---
+
+**FINAL OUTPUT:**
+
+Return ONLY the JSON object. No questions, no reasoning, no explanations.

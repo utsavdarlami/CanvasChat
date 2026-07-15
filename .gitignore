@@ -1,0 +1,32 @@
+# --- secrets / local config ---
+.env
+ngrok.yml
+/opencode.json
+
+# --- agent & tool caches ---
+/.codex/
+/.opencode/
+/.claude/
+/.enzyme/
+/tldraw-agent/
+
+# --- python / build caches ---
+/__pycache__/
+/.mypy_cache/
+/.pytest_cache/
+/.ruff_cache/
+/backend/static/
+
+# --- research material: paper drafts, IRB, literature, study datasets ---
+# Not needed to build or run the app. Kept on disk, out of the code repo.
+# backend/scripts/generate_movie_dataset.py writes into study_files/dataset/.
+/study_files/
+
+# --- parked scratch notes, pending review before deletion ---
+/_archive/
+
+# --- debug output & captures (local only) ---
+/debug_logs/
+/screenshots/
+entity-view-*.svg
+hermes_conversation_*.json

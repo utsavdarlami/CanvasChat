@@ -1,0 +1,57 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "layout_reasoning": "The two views are highly comparable, displaying identical data types (top 10 crime types for Q1 2023) from different locations (Baltimore vs. LA). To facilitate direct comparison and reflect their strong 'comparative_parallel' relationship, they are aligned horizontally and placed in close proximity. This arrangement supports easy visual contrast between the crime patterns of the two cities.",
+    "metadata": {
+      "approach": "layer_3_llm_only",
+      "layer_3_method": "llm_coordinate_generation",
+      "skipped_layers": [
+        "1_semantic_extraction",
+        "2_relationship_analysis"
+      ],
+      "entity_count": 2,
+      "relationship_count": 1,
+      "cluster_count": 1,
+      "llm_temperature": 0.0
+    }
+  },
+  "nodes": [
+    {
+      "entity_id": "entity-1766260520889-b24126d4",
+      "name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "entity_id": "entity-1766260538502-a1ac21a2",
+      "name": "Q1 2023 - Top 10 Crime Types",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1",
+          "cluster_type": "comparative_parallel_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    }
+  ],
+  "links": [
+    {
+      "source": "entity-1766260520889-b24126d4",
+      "target": "entity-1766260538502-a1ac21a2",
+      "relationship_type": "comparative_parallel",
+      "strength": "strong",
+      "confidence": 0.95,
+      "directionality": "undirected"
+    }
+  ]
+}

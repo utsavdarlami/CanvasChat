@@ -1,0 +1,98 @@
+You are an expert in document analysis. Analyze a SINGLE text document and extract key semantic properties into a JSON object.
+
+**CRITICAL INSTRUCTIONS:**
+1. Return ONLY a valid JSON object — no explanations, no reasoning.
+2. The JSON MUST match the "Expected JSON Structure" below exactly.
+3. Extract ONLY observable facts from the document text.
+
+---
+
+**INPUTS**
+
+**Text Document Content:**
+```
+{text_content}
+```
+
+**Document Metadata (if available):**
+```
+{metadata}
+```
+
+---
+
+**EXTRACTION GUIDE**
+
+Answer these questions mentally, then output JSON:
+
+**1. TITLE**: Does the document have an explicit title? If yes, extract verbatim. If no, generate a concise title (max 60 chars) from the main topic.
+
+**2. ITEM TYPE**: Classify the document structure:
+- "intelligence_report": Formal intelligence assessment or briefing
+- "memo": Internal communication or directive
+- "brief": Short summary or executive briefing
+- "analysis": Analytical assessment or study
+- "review": User feedback, critique, or opinion piece
+- "news_article": News report or press release
+- "correspondence": Letters, emails, or official communications
+- "summary": Executive summary or abstract
+- "transcript": Meeting notes or recorded communications
+- "research_paper": Academic or research publication
+- "entity_profile": Structured description of a single entity with attributes
+- "data_record": Raw data entry or key-value listing
+
+**3. GRANULARITY**: Assess the detail level:
+- "summary": High-level overview, few specifics (<10 key points)
+- "overview": Broad coverage, key points highlighted (10-30 points)
+- "detailed": In-depth with specifics (many data points)
+- "comprehensive": Exhaustive with all available details
+
+**4. SENTIMENT**: Emotional tone of the document:
+- "neutral": Factual reporting (most intelligence reports)
+- "positive": Optimistic, favorable language
+- "negative": Critical, unfavorable language
+- "mixed": Both positive and negative elements
+- null: If not applicable
+
+**5. KEY THEMES**: Identify 3-8 key terms representing main topics, subject matter, and domain terminology. These enable thematic clustering with other documents and charts.
+
+**6. DOMAIN**: Subject area — e.g., "intelligence", "crime", "health", "economics", "entertainment", "technology". Infer from document content.
+
+**7. LOCATION**: Primary geographic focus, if any (e.g., "Afghanistan", "Los Angeles", "United States"). Set to null if no clear geographic focus.
+
+**8. TEMPORAL FOCUS**: What time period do the EVENTS described cover?
+
+**CRITICAL RULES:**
+- Use incident/event dates, NOT the document's publication date.
+- A report written April 2003 about events in 1990-1992 → "1990 - 1992"
+- A user review's posting date is NOT an event date → null
+- A transcript of a meeting on a specific date → that date
+- Format as a simple string: "2023", "Q1 2023", "Jan - Mar 2023", "1990 - 1992", "2003-04-27"
+- If no specific event time period exists → null
+
+**9. SUMMARY**: 1-2 sentence summary of the document content focusing on main subject and key findings. If the source text is under 40 words, set to null.
+
+---
+
+**Expected JSON Structure:**
+
+```json
+{example_json}
+```
+
+---
+
+**CONSISTENCY CHECK:**
+
+Before outputting, verify:
+1. item_type matches one of the valid document types listed above
+2. granularity is one of: summary, overview, detailed, comprehensive
+3. temporal_focus uses event dates (not document date) or is null
+4. key_themes has 3-8 items
+5. encoded_metrics is an empty array (text documents have no encoded metrics)
+
+---
+
+**FINAL OUTPUT:**
+
+Return ONLY the JSON object. No questions, no reasoning, no explanations.

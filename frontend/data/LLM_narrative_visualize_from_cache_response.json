@@ -1,0 +1,524 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "layout_reasoning": "Step 1 (Root): The dominant relationship across all 14 entities is 'Hierarchical Detail' (Priority 0.9), with 'Year Overview' acting as a parent to all monthly views. The layout space is partitioned vertically, placing the parent 'Year Overview' in the top region (negative Y) and the 13 child entities into a large sub-region below it (positive Y). Step 2 (Child Region): Within the sub-region of 13 entities, the dominant organizing principle is 'Temporal Sequence' (Priority 0.5). This space is partitioned horizontally into 7 columns along the X-axis, representing the chronological flow of months: January, February, March, August, October, November, and December. Step 3 (Columns): For columns with multiple entities (March, August, October, December), 'Thematic Proximity' is used to stack the related views vertically within their respective time slots.",
+    "metadata": {
+      "approach": "layer_3_llm_only",
+      "layer_3_method": "llm_coordinate_generation",
+      "skipped_layers": [
+        "1_semantic_extraction",
+        "2_relationship_analysis"
+      ],
+      "entity_count": 14,
+      "relationship_count": 8,
+      "cluster_count": 4,
+      "llm_temperature": 0.0
+    }
+  },
+  "nodes": [
+    {
+      "name": "Year Overview",
+      "display_name": "Year Overview",
+      "entity_id": "entity-1769116036586-19379e84",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 0.0,
+      "y": -35.0,
+      "id": "entity-1769116036586-19379e84"
+    },
+    {
+      "name": "January Overview",
+      "display_name": "January Overview",
+      "entity_id": "entity-1769116036586-73a4397e",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": -45.0,
+      "y": 10.0,
+      "id": "entity-1769116036586-73a4397e"
+    },
+    {
+      "name": "February Indoors",
+      "display_name": "February Indoors",
+      "entity_id": "entity-1769116036586-b7096d56",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": -30.0,
+      "y": 10.0,
+      "id": "entity-1769116036586-b7096d56"
+    },
+    {
+      "name": "March Routine",
+      "display_name": "March Routine",
+      "entity_id": "entity-1769116058332-3d824ce2",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": -15.0,
+      "y": 10.0,
+      "id": "entity-1769116058332-3d824ce2"
+    },
+    {
+      "name": "March Daily",
+      "display_name": "March Daily",
+      "entity_id": "entity-1769116058333-cf6004b0",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": -15.0,
+      "y": 25.0,
+      "id": "entity-1769116058333-cf6004b0"
+    },
+    {
+      "name": "August Heatmap",
+      "display_name": "August Heatmap",
+      "entity_id": "entity-1769116058333-fe045fc2",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        },
+        {
+          "cluster_id": "cluster-3-thematic-august",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-4-thematic-geospatial",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.85
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0,
+      "id": "entity-1769116058333-fe045fc2"
+    },
+    {
+      "name": "August Violence",
+      "display_name": "August Violence",
+      "entity_id": "entity-1769116058333-1428f9d2",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        },
+        {
+          "cluster_id": "cluster-3-thematic-august",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 0.0,
+      "y": 25.0,
+      "id": "entity-1769116058333-1428f9d2"
+    },
+    {
+      "name": "August Demographics",
+      "display_name": "August Demographics",
+      "entity_id": "entity-1769116058333-73da03f3",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        },
+        {
+          "cluster_id": "cluster-3-thematic-august",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.95
+        }
+      ],
+      "x": 0.0,
+      "y": 40.0,
+      "id": "entity-1769116058333-73da03f3"
+    },
+    {
+      "name": "October Geography",
+      "display_name": "October Geography",
+      "entity_id": "entity-1769116058333-5b03ee6e",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        },
+        {
+          "cluster_id": "cluster-4-thematic-geospatial",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.85
+        }
+      ],
+      "x": 15.0,
+      "y": 10.0,
+      "id": "entity-1769116058333-5b03ee6e"
+    },
+    {
+      "name": "October Evenings",
+      "display_name": "October Evenings",
+      "entity_id": "entity-1769116058333-5e1e74aa",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": 15.0,
+      "y": 25.0,
+      "id": "entity-1769116058333-5e1e74aa"
+    },
+    {
+      "name": "November Premise",
+      "display_name": "November Premise",
+      "entity_id": "entity-1769116058333-f79586a6",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": 30.0,
+      "y": 10.0,
+      "id": "entity-1769116058333-f79586a6"
+    },
+    {
+      "name": "December Targets",
+      "display_name": "December Targets",
+      "entity_id": "entity-1769116058333-59d6d85b",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": 45.0,
+      "y": 40.0,
+      "id": "entity-1769116058333-59d6d85b"
+    },
+    {
+      "name": "December Piracy",
+      "display_name": "December Piracy",
+      "entity_id": "entity-1769116058333-5e176af7",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        },
+        {
+          "cluster_id": "cluster-4-thematic-geospatial",
+          "cluster_type": "thematic_group",
+          "cohesion_score": 0.85
+        }
+      ],
+      "x": 45.0,
+      "y": 25.0,
+      "id": "entity-1769116058333-5e176af7"
+    },
+    {
+      "name": "December Countdown",
+      "display_name": "December Countdown",
+      "entity_id": "entity-1769116058333-4437cde3",
+      "clusters": [
+        {
+          "cluster_id": "cluster-1-hierarchy",
+          "cluster_type": "hierarchical",
+          "cohesion_score": 0.95
+        },
+        {
+          "cluster_id": "cluster-2-timeline",
+          "cluster_type": "sequential",
+          "cohesion_score": 0.9
+        }
+      ],
+      "x": 45.0,
+      "y": 10.0,
+      "id": "entity-1769116058333-4437cde3"
+    }
+  ],
+  "links": [
+    {
+      "relationship_type": "hierarchical_detail",
+      "strength": "strong",
+      "confidence": 1.0,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 1.0,
+      "reasoning": "The 'Year Overview' entity covers all of 2023, while 'January Overview' focuses on a specific temporal subset (January 2023), representing a clear temporal drill-down from the parent to the child.",
+      "source_name": "Year Overview",
+      "target_name": "January Overview",
+      "source": "entity-1769116036586-19379e84",
+      "target": "entity-1769116036586-73a4397e",
+      "shared_fields": [
+        "source_id",
+        "temporal_scope"
+      ],
+      "shared_fields_count": 2,
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": true,
+        "recommended_interaction": "drill_down"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "temporal_sequence",
+      "strength": "strong",
+      "confidence": 0.95,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 0.95,
+      "reasoning": "The first entity covers January 2023 and the second covers February 2023. They represent consecutive steps in a chronological exploration of the same dataset.",
+      "source_name": "January Overview",
+      "target_name": "February Indoors",
+      "source": "entity-1769116036586-73a4397e",
+      "target": "entity-1769116036586-b7096d56",
+      "shared_fields": [
+        "source_id",
+        "source_context.domain"
+      ],
+      "shared_fields_count": 2,
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "linked_navigation"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "temporal_sequence",
+      "strength": "strong",
+      "confidence": 0.95,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 0.95,
+      "reasoning": "The first entity covers February 2023 and the second covers March 2023, continuing a chronological progression through the year's crime data.",
+      "source_name": "February Indoors",
+      "target_name": "March Routine",
+      "source": "entity-1769116036586-b7096d56",
+      "target": "entity-1769116058332-3d824ce2",
+      "shared_fields": [
+        "source_id",
+        "source_context.domain"
+      ],
+      "shared_fields_count": 2,
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "linked_navigation"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "shared_temporal_filter",
+      "strength": "strong",
+      "confidence": 0.9,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.9,
+      "reasoning": "Both entities analyze data for March 2023 but provide different perspectives: one shows a heatmap of hourly/daily patterns ('March Routine'), while the other shows a line chart of daily totals ('March Daily').",
+      "source_name": "March Routine",
+      "target_name": "March Daily",
+      "source": "entity-1769116058332-3d824ce2",
+      "target": "entity-1769116058333-cf6004b0",
+      "shared_fields": [
+        "temporal_scope"
+      ],
+      "shared_fields_count": 1,
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "coordinated_highlight"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "shared_temporal_filter",
+      "strength": "strong",
+      "confidence": 0.9,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.9,
+      "reasoning": "Both entities are filtered to August 2023, with one showing the geographic distribution of incidents and the other showing the types of weapons used.",
+      "source_name": "August Heatmap",
+      "target_name": "August Violence",
+      "source": "entity-1769116058333-fe045fc2",
+      "target": "entity-1769116058333-1428f9d2",
+      "shared_fields": [
+        "temporal_scope"
+      ],
+      "shared_fields_count": 1,
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "coordinated_highlight"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "shared_temporal_filter",
+      "strength": "strong",
+      "confidence": 0.9,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.9,
+      "reasoning": "Both entities analyze data for August 2023, providing complementary views on geographic locations and demographic age groups involved in incidents.",
+      "source_name": "August Heatmap",
+      "target_name": "August Demographics",
+      "source": "entity-1769116058333-fe045fc2",
+      "target": "entity-1769116058333-73da03f3",
+      "shared_fields": [
+        "temporal_scope"
+      ],
+      "shared_fields_count": 1,
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "coordinated_highlight"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "shared_dimension",
+      "strength": "medium",
+      "confidence": 0.85,
+      "directionality": "undirected",
+      "edge_type": "relationship",
+      "weight": 0.85,
+      "reasoning": "Both entities are line charts that visualize the daily sum of total incidents, sharing the 'Day' and 'Total_Incidents' dimensions, but for different months (March and December).",
+      "source_name": "March Daily",
+      "target_name": "December Countdown",
+      "source": "entity-1769116058333-cf6004b0",
+      "target": "entity-1769116058333-4437cde3",
+      "shared_fields": [
+        "Day",
+        "Total_Incidents"
+      ],
+      "shared_fields_count": 2,
+      "interaction_potential": {
+        "can_filter": false,
+        "can_highlight": true,
+        "can_drill_down": false,
+        "recommended_interaction": "side_by_side_comparison"
+      },
+      "cross_dataset": false
+    },
+    {
+      "relationship_type": "data_transformation",
+      "strength": "medium",
+      "confidence": 0.8,
+      "directionality": "directed",
+      "edge_type": "relationship",
+      "weight": 0.8,
+      "reasoning": "For the same period (December 2023), one entity shows a temporal aggregation (daily counts), while the other shows a disaggregated geographic view of individual incidents, representing a transformation from summary to detail.",
+      "source_name": "December Countdown",
+      "target_name": "December Piracy",
+      "source": "entity-1769116058333-4437cde3",
+      "target": "entity-1769116058333-5e176af7",
+      "shared_fields": [
+        "temporal_scope"
+      ],
+      "shared_fields_count": 1,
+      "interaction_potential": {
+        "can_filter": true,
+        "can_highlight": true,
+        "can_drill_down": true,
+        "recommended_interaction": "drill_down"
+      },
+      "cross_dataset": false
+    }
+  ]
+}

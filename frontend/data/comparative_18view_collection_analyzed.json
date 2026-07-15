@@ -1,0 +1,2649 @@
+{
+  "analyzed_entities": [
+    {
+      "id": "entity-0",
+      "name": "Q1 2023 - Top 10 Crime Types",
+      "semantics": {
+        "title": "Q1 2023 - Top 10 Crime Types",
+        "description": "This horizontal bar chart displays the top 10 crime types by incident count for the first quarter of 2023. The y-axis lists the crime type descriptions, and the x-axis shows the total number of incidents.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset of crime incidents from 2023 onwards, derived from a file named 'Crime_Data_from_2023_to_Present_compressed.csv' within an 'LA_CrimeDataset' directory."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "cardinality": 138,
+            "sample_values": [
+              "SHOPLIFTING - PETTY THEFT ($950 & UNDER)",
+              "THEFT PLAIN - PETTY ($950 & UNDER)",
+              "ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-01",
+          "end": "2023-03",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime types",
+          "incidents",
+          "top 10",
+          "Q1 2023",
+          "LA"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q1 2023 - Top 10 Crime Types",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 0, 1) && datum.ParsedDate < datetime(2023, 3, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Crm Cd Desc"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Crm Cd Desc",
+              "type": "nominal",
+              "title": "Crime Type"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-1",
+      "name": "Q3 2023 - Top 10 Crime Types",
+      "semantics": {
+        "title": "Q3 2023 - Top 10 Crime Types",
+        "description": "This bar chart displays the top 10 most frequent crime types based on incident counts for the third quarter of 2023. Crime types are listed on the y-axis, and the number of incidents is represented by the length of the bars on the x-axis.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present compressed",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "Dataset of crime incidents from 2023 to the present, containing details like date, crime description, and location."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "cardinality": 138,
+            "sample_values": [
+              "SHOPLIFTING - PETTY THEFT ($950 & UNDER)",
+              "THEFT PLAIN - PETTY ($950 & UNDER)",
+              "ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "quarter",
+          "date": null,
+          "start": null,
+          "end": null,
+          "year": 2023,
+          "quarter": "Q3",
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "incidents",
+          "top 10",
+          "crime types",
+          "Q3 2023"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q3 2023 - Top 10 Crime Types",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 6, 1) && datum.ParsedDate < datetime(2023, 9, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Crm Cd Desc"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Crm Cd Desc",
+              "type": "nominal",
+              "title": "Crime Type"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-2",
+      "name": "Q4 2023 - Top 10 Crime Types",
+      "semantics": {
+        "title": "Q4 2023 - Top 10 Crime Types",
+        "description": "A horizontal bar chart that displays the top 10 crime types based on the total number of incidents. The data is filtered to only include crimes that occurred in the fourth quarter of 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset of crime incidents from Los Angeles, containing fields such as crime description, date of occurrence, and location."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "cardinality": 138,
+            "sample_values": [
+              "SHOPLIFTING - PETTY THEFT ($950 & UNDER)",
+              "THEFT PLAIN - PETTY ($950 & UNDER)",
+              "ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "quarter",
+          "date": null,
+          "start": null,
+          "end": null,
+          "year": 2023,
+          "quarter": "Q4",
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "incidents",
+          "top 10",
+          "crime types",
+          "Los Angeles"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Los Angeles"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q4 2023 - Top 10 Crime Types",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 9, 1) && datum.ParsedDate < datetime(2024, 0, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Crm Cd Desc"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Crm Cd Desc",
+              "type": "nominal",
+              "title": "Crime Type"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-3",
+      "name": "Q1 2023 - Crime Map by Area",
+      "semantics": {
+        "title": "Q1 2023 - Crime Map by Area",
+        "description": "This symbol map displays the number of crime incidents in different areas of Los Angeles during the first quarter of 2023. The size and color of each circle represent the total incident count for an area, which is aggregated from individual crime records.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset of crime incidents in Los Angeles, containing information such as date, location (latitude/longitude), area name, and crime description."
+        },
+        "structure_type": "scatter_plot",
+        "granularity": "regional",
+        "semantic_dimensions": [
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "cardinality": 21,
+            "sample_values": []
+          },
+          {
+            "field": "latitude",
+            "type": "quantitative",
+            "cardinality": 21,
+            "sample_values": []
+          },
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": 21,
+            "sample_values": []
+          },
+          {
+            "field": "AREA NAME",
+            "type": "nominal",
+            "cardinality": 21,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-01",
+          "end": "2023-03",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "map",
+          "incidents",
+          "area",
+          "Q1 2023"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Los Angeles"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 400,
+          "has_temporal": false,
+          "has_geospatial": true,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q1 2023 - Crime Map by Area",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 0, 1) && datum.ParsedDate < datetime(2023, 3, 1)"
+          },
+          {
+            "filter": "datum.LAT != null && datum.LON != null && datum.LAT != 0 && datum.LON != 0"
+          },
+          {
+            "calculate": "toNumber(datum.LAT)",
+            "as": "lat"
+          },
+          {
+            "calculate": "toNumber(datum.LON)",
+            "as": "lon"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              },
+              {
+                "op": "mean",
+                "field": "lat",
+                "as": "latitude"
+              },
+              {
+                "op": "mean",
+                "field": "lon",
+                "as": "longitude"
+              }
+            ],
+            "groupby": [
+              "AREA NAME"
+            ]
+          }
+        ],
+        "width": 400,
+        "height": 400,
+        "projection": {
+          "type": "mercator"
+        },
+        "mark": {
+          "type": "circle",
+          "opacity": 0.6
+        },
+        "encoding": {
+          "longitude": {
+            "field": "longitude",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "latitude",
+            "type": "quantitative"
+          },
+          "size": {
+            "field": "incident_count",
+            "type": "quantitative",
+            "scale": {
+              "range": [
+                10,
+                500
+              ]
+            }
+          },
+          "color": {
+            "field": "incident_count",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "reds"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "AREA NAME",
+              "type": "nominal",
+              "title": "Area"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-4",
+      "name": "Q3 2023 - Crime Heatmap by Hour/Day",
+      "semantics": {
+        "title": "Q3 2023 - Crime Heatmap by Hour/Day",
+        "description": "This heatmap displays the count of crime incidents in Los Angeles during Q3 2023, aggregated by the hour of the day and the day of the week.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "Dataset of crime incidents from 2023 onwards in Los Angeles, based on the URL structure and filename."
+        },
+        "structure_type": "heatmap",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "Hour",
+            "type": "ordinal",
+            "cardinality": 24,
+            "sample_values": [
+              11,
+              16,
+              10
+            ]
+          },
+          {
+            "field": "DayOfWeek",
+            "type": "ordinal",
+            "cardinality": 7,
+            "sample_values": [
+              6,
+              2
+            ]
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-06",
+          "end": "2023-08",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "heatmap",
+          "hour",
+          "day",
+          "incidents"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 200,
+          "has_temporal": true,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q3 2023 - Crime Heatmap by Hour/Day",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 6, 1) && datum.ParsedDate < datetime(2023, 9, 1)"
+          },
+          {
+            "calculate": "floor(toNumber(datum['TIME OCC']) / 100)",
+            "as": "Hour"
+          },
+          {
+            "calculate": "day(datum.ParsedDate)",
+            "as": "DayOfWeek"
+          }
+        ],
+        "width": 400,
+        "height": 200,
+        "mark": "rect",
+        "encoding": {
+          "x": {
+            "field": "Hour",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "DayOfWeek",
+            "type": "ordinal"
+          },
+          "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "oranges"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "DayOfWeek",
+              "type": "ordinal",
+              "title": "Day"
+            },
+            {
+              "field": "Hour",
+              "type": "ordinal"
+            },
+            {
+              "aggregate": "count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": false
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-5",
+      "name": "Monthly Crime Trend",
+      "semantics": {
+        "title": "Monthly Crime Trend",
+        "description": "This line chart visualizes the monthly trend of crime incidents, plotting the total count of incidents for each month and year.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset containing crime records from Los Angeles, starting from 2023."
+        },
+        "structure_type": "line_chart",
+        "granularity": "regional",
+        "semantic_dimensions": [
+          {
+            "field": "Month",
+            "type": "temporal",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "crime",
+          "monthly",
+          "trend",
+          "incidents",
+          "count"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 500,
+          "spec_height": 250,
+          "has_temporal": true,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Monthly Crime Trend",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "timeUnit": "yearmonth",
+            "field": "ParsedDate",
+            "as": "Month"
+          }
+        ],
+        "width": 500,
+        "height": 250,
+        "mark": {
+          "type": "line",
+          "point": true,
+          "strokeWidth": 1.5
+        },
+        "encoding": {
+          "x": {
+            "field": "Month",
+            "type": "temporal",
+            "axis": {
+              "format": "%b %Y",
+              "labelAngle": -45
+            }
+          },
+          "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Month",
+              "type": "temporal",
+              "format": "%B %Y"
+            },
+            {
+              "aggregate": "count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-6",
+      "name": "Top 5 Premises",
+      "semantics": {
+        "title": "Top 5 Premises",
+        "description": "This donut chart displays the top 5 crime premises based on the total count of incidents. Each slice's size corresponds to the incident count, and its color identifies the specific premise.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data from 2023 to Present compressed",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "A dataset of crime incidents from Los Angeles, containing fields like premise description, crime description, and location."
+        },
+        "structure_type": "pie_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Premis Desc",
+            "type": "nominal",
+            "cardinality": 297,
+            "sample_values": [
+              "OTHER BUSINESS",
+              "MULTI-UNIT DWELLING (APARTMENT, DUPLEX, ETC)",
+              "STREET"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "Premises",
+          "Incidents",
+          "Crime",
+          "Top 5"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 300,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Top 5 Premises",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Premis Desc"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 5"
+          }
+        ],
+        "width": 300,
+        "height": 300,
+        "mark": {
+          "type": "arc",
+          "innerRadius": 50
+        },
+        "encoding": {
+          "theta": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Premis Desc",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "Premis Desc",
+              "type": "nominal",
+              "title": "Premise"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-7",
+      "name": "Crime Distribution by Area",
+      "semantics": {
+        "title": "Crime Distribution by Area",
+        "description": "This is a scatter plot map showing the geographic distribution of 5000 sampled crime incidents. Each point represents a crime, positioned by its latitude and longitude, and colored by its corresponding police area name.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data 2023 to Present",
+          "location": "LA",
+          "domain": "Crime",
+          "description": "Dataset of crime incidents in Los Angeles from 2023 onwards, containing location coordinates, area names, and crime descriptions."
+        },
+        "structure_type": "scatter_plot",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "lon",
+            "type": "quantitative",
+            "cardinality": 4820,
+            "sample_values": [
+              -118.3092,
+              -118.2726,
+              -118.3616
+            ]
+          },
+          {
+            "field": "lat",
+            "type": "quantitative",
+            "cardinality": 4956,
+            "sample_values": [
+              34.0981,
+              34.0396,
+              34.1721
+            ]
+          },
+          {
+            "field": "AREA NAME",
+            "type": "nominal",
+            "cardinality": 21,
+            "sample_values": [
+              "Hollywood",
+              "Central",
+              "N Hollywood"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "Crime",
+          "Distribution",
+          "Area",
+          "Location",
+          "Map"
+        ],
+        "entity_mentions": {
+          "location": [
+            "LA"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 400,
+          "has_temporal": false,
+          "has_geospatial": true,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Crime Distribution by Area",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "width": 400,
+        "height": 400,
+        "projection": {
+          "type": "mercator"
+        },
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "filter": "datum.LAT != null && datum.LON != null && datum.LAT != 0 && datum.LON != 0"
+          },
+          {
+            "filter": "datum['AREA NAME'] != null && datum['AREA NAME'] != ''"
+          },
+          {
+            "calculate": "toNumber(datum.LAT)",
+            "as": "lat"
+          },
+          {
+            "calculate": "toNumber(datum.LON)",
+            "as": "lon"
+          },
+          {
+            "sample": 5000
+          }
+        ],
+        "mark": {
+          "type": "circle",
+          "opacity": 0.3,
+          "size": 3
+        },
+        "encoding": {
+          "longitude": {
+            "field": "lon",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "lat",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "AREA NAME",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "AREA NAME",
+              "type": "nominal",
+              "title": "Area"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-8",
+      "name": "Q2 2023 - Top 10 Crime Types",
+      "semantics": {
+        "title": "Q2 2023 - Top 10 Crime Types",
+        "description": "This horizontal bar chart displays the top 10 crime types by incident count in Los Angeles for the second quarter of 2023. Crime types are listed on the y-axis, and the number of incidents is on the x-axis.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv",
+        "source_context": {
+          "dataset_name": "Crime Data 2023+",
+          "location": "Los Angeles",
+          "domain": "Crime",
+          "description": "Dataset of crime incidents in Los Angeles from 2023 onwards, identified from the URL path /LA_CrimeDataset/."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "cardinality": 138,
+            "sample_values": [
+              "SHOPLIFTING - PETTY THEFT ($950 & UNDER)",
+              "THEFT PLAIN - PETTY ($950 & UNDER)",
+              "ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-03",
+          "end": "2023-05",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "incidents",
+          "top 10",
+          "los angeles",
+          "q2 2023"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Los Angeles"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "title": "Q2 2023 - Top 10 Crime Types",
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/LA_CrimeDataset/Crime_Data_from_2023_to_Present_compressed.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum['DATE OCC'], '%Y-%m-%d')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 3, 1) && datum.ParsedDate < datetime(2023, 6, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Crm Cd Desc"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Crm Cd Desc",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Crm Cd Desc",
+              "type": "nominal",
+              "title": "Crime Type"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-9",
+      "name": "Top 10 Crime Types (Jan - Mar 2023)",
+      "semantics": {
+        "title": "Top 10 Crime Types (Jan - Mar 2023)",
+        "description": "This horizontal bar chart displays the top 10 crime types in Baltimore by the total number of incidents, aggregated for the period of January to March 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "Crime data from the National Incident-Based Reporting System (NIBRS) for Baltimore, containing fields like crime description, date, location, and incident counts."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Description",
+            "type": "nominal",
+            "cardinality": 28,
+            "sample_values": [
+              "VANDALISM",
+              "INTIMIDATION",
+              "AUTO THEFT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-01",
+          "end": "2023-03",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime types",
+          "incidents",
+          "top 10",
+          "Baltimore"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Top 10 Crime Types (Jan - Mar 2023)",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 0, 1) && datum.ParsedDate < datetime(2023, 3, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Description"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Description",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Description",
+              "type": "nominal"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-10",
+      "name": "Top 10 Crime Types (March - May 2023)",
+      "semantics": {
+        "title": "Top 10 Crime Types (March - May 2023)",
+        "description": "A horizontal bar chart that displays the total number of incidents for the top 10 crime types. The data is aggregated by crime description and filtered to show incidents occurring between March and May 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "A dataset of NIBRS Group A crime incidents for Baltimore, based on the URL structure."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Description",
+            "type": "nominal",
+            "cardinality": 28,
+            "sample_values": [
+              "VANDALISM",
+              "INTIMIDATION",
+              "AUTO THEFT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-03",
+          "end": "2023-05",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime types",
+          "incidents",
+          "top 10",
+          "Baltimore"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Top 10 Crime Types (March - May 2023)",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 3, 1) && datum.ParsedDate < datetime(2023, 6, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Description"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Description",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Description",
+              "type": "nominal"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-11",
+      "name": "Top 10 Crime Types (Jun - Aug 2023)",
+      "semantics": {
+        "title": "Top 10 Crime Types (Jun - Aug 2023)",
+        "description": "This bar chart displays the top 10 crime types in Baltimore by the total number of incidents, aggregated for the period of June to August 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "NIBRS Group A crime data for Baltimore, sourced from a GitHub repository."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Description",
+            "type": "nominal",
+            "cardinality": 28,
+            "sample_values": [
+              "VANDALISM",
+              "INTIMIDATION",
+              "AUTO THEFT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-06",
+          "end": "2023-08",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime types",
+          "incidents",
+          "top 10",
+          "Baltimore"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Top 10 Crime Types (Jun - Aug 2023)",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 6, 1) && datum.ParsedDate < datetime(2023, 9, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Description"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Description",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Description",
+              "type": "nominal"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-12",
+      "name": "Top 10 Crime Types (Sep - Dec 2023)",
+      "semantics": {
+        "title": "Top 10 Crime Types (Sep - Dec 2023)",
+        "description": "A horizontal bar chart displaying the total number of incidents for the top 10 crime types in Baltimore, based on data from September to December 2023.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "NIBRS Group A crime data from a Baltimore dataset, including details like crime type, date, and location."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Description",
+            "type": "nominal",
+            "cardinality": 28,
+            "sample_values": [
+              "VANDALISM",
+              "INTIMIDATION",
+              "AUTO THEFT"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-09",
+          "end": "2023-12",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "incidents",
+          "crime types",
+          "top 10",
+          "Baltimore"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Top 10 Crime Types (Sep - Dec 2023)",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 9, 1) && datum.ParsedDate < datetime(2024, 0, 1)"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Description"
+            ]
+          },
+          {
+            "window": [
+              {
+                "op": "rank",
+                "as": "rank"
+              }
+            ],
+            "sort": [
+              {
+                "field": "incident_count",
+                "order": "descending"
+              }
+            ]
+          },
+          {
+            "filter": "datum.rank <= 10"
+          }
+        ],
+        "width": 400,
+        "height": 300,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Description",
+            "type": "nominal",
+            "sort": "-x"
+          },
+          "tooltip": [
+            {
+              "field": "Description",
+              "type": "nominal"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-13",
+      "name": "Map of Incidents during Q1 2023",
+      "semantics": {
+        "title": "Map of Incidents during Q1 2023",
+        "description": "This proportional symbol map displays the total count of crime incidents across different neighborhoods in Baltimore during the first quarter of 2023. Each circle represents a neighborhood, with its size and color intensity corresponding to the number of incidents.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "Crime incident data for Baltimore, aggregated by neighborhood, from the National Incident-Based Reporting System (NIBRS)."
+        },
+        "structure_type": "proportional_symbol_map",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "cardinality": 290,
+            "sample_values": [
+              -76.614453,
+              -76.670534,
+              -76.694644
+            ]
+          },
+          {
+            "field": "latitude",
+            "type": "quantitative",
+            "cardinality": 290,
+            "sample_values": [
+              39.313659,
+              39.30821,
+              39.354639
+            ]
+          },
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Neighborhood",
+            "type": "nominal",
+            "cardinality": 290,
+            "sample_values": [
+              "BARCLAY",
+              "ROSEMONT",
+              "GLEN"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-01",
+          "end": "2023-03",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "incidents",
+          "map",
+          "crime",
+          "Baltimore",
+          "neighborhood"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 400,
+          "has_temporal": false,
+          "has_geospatial": true,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Map of Incidents during Q1 2023",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 0, 1) && datum.ParsedDate < datetime(2023, 3, 1)"
+          },
+          {
+            "filter": "datum.Latitude != null && datum.Longitude != null && datum.Latitude != '' && datum.Longitude != ''"
+          },
+          {
+            "calculate": "toNumber(datum.Latitude)",
+            "as": "lat"
+          },
+          {
+            "calculate": "toNumber(datum.Longitude)",
+            "as": "lon"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              },
+              {
+                "op": "mean",
+                "field": "lat",
+                "as": "latitude"
+              },
+              {
+                "op": "mean",
+                "field": "lon",
+                "as": "longitude"
+              }
+            ],
+            "groupby": [
+              "Neighborhood"
+            ]
+          }
+        ],
+        "width": 400,
+        "height": 400,
+        "projection": {
+          "type": "mercator"
+        },
+        "mark": {
+          "type": "circle",
+          "opacity": 0.6
+        },
+        "encoding": {
+          "longitude": {
+            "field": "longitude",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "latitude",
+            "type": "quantitative"
+          },
+          "size": {
+            "field": "incident_count",
+            "type": "quantitative",
+            "scale": {
+              "range": [
+                10,
+                500
+              ]
+            }
+          },
+          "color": {
+            "field": "incident_count",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "reds"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "Neighborhood",
+              "type": "nominal"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-14",
+      "name": "Q3 Outside Crimes Heatmap (June - August 2023)",
+      "semantics": {
+        "title": "Q3 Outside Crimes Heatmap (June - August 2023)",
+        "description": "This heatmap visualizes the concentration of outside crimes by hour of the day and day of the week, aggregated for the third quarter of 2023 (June - August).",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "NIBRS Group A crime data for Baltimore, including incident details, location, and timestamps."
+        },
+        "structure_type": "heatmap",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "Hour",
+            "type": "ordinal",
+            "cardinality": 24,
+            "sample_values": []
+          },
+          {
+            "field": "DayOfWeek",
+            "type": "ordinal",
+            "cardinality": 7,
+            "sample_values": []
+          },
+          {
+            "field": "sum_of_Total_Incidents",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "2023-06",
+          "end": "2023-08",
+          "year": null,
+          "quarter": null,
+          "source": "data"
+        },
+        "keywords": [
+          "crime",
+          "heatmap",
+          "incidents",
+          "time of day",
+          "day of week"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 200,
+          "has_temporal": true,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Q3 Outside Crimes Heatmap (June - August 2023)",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "filter": "datum.ParsedDate >= datetime(2023, 6, 1) && datum.ParsedDate < datetime(2023, 9, 1)"
+          },
+          {
+            "filter": "datum.Inside_Outside === 'O'"
+          },
+          {
+            "calculate": "hours(datum.ParsedDate)",
+            "as": "Hour"
+          },
+          {
+            "calculate": "day(datum.ParsedDate)",
+            "as": "DayOfWeek"
+          }
+        ],
+        "width": 400,
+        "height": 200,
+        "mark": "rect",
+        "encoding": {
+          "x": {
+            "field": "Hour",
+            "type": "ordinal"
+          },
+          "y": {
+            "field": "DayOfWeek",
+            "type": "ordinal"
+          },
+          "color": {
+            "aggregate": "sum",
+            "field": "Total_Incidents",
+            "type": "quantitative",
+            "scale": {
+              "scheme": "oranges"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "DayOfWeek",
+              "type": "ordinal",
+              "title": "Day"
+            },
+            {
+              "field": "Hour",
+              "type": "ordinal"
+            },
+            {
+              "aggregate": "sum",
+              "field": "Total_Incidents",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": false
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-15",
+      "name": "Multi-Year Monthly Crime Trend",
+      "semantics": {
+        "title": "Multi-Year Monthly Crime Trend",
+        "description": "This line chart displays the multi-year trend of the total number of crime incidents, aggregated on a monthly basis.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "Crime data for Baltimore from the National Incident-Based Reporting System (NIBRS)."
+        },
+        "structure_type": "line_chart",
+        "granularity": "regional",
+        "semantic_dimensions": [
+          {
+            "field": "Month",
+            "type": "temporal",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Total_Incidents",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "crime",
+          "trend",
+          "monthly",
+          "incidents"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 500,
+          "spec_height": 250,
+          "has_temporal": true,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Multi-Year Monthly Crime Trend",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "calculate": "timeParse(datum.CrimeDateTime, '%m/%d/%Y %I:%M:%S %p')",
+            "as": "ParsedDate"
+          },
+          {
+            "timeUnit": "yearmonth",
+            "field": "ParsedDate",
+            "as": "Month"
+          }
+        ],
+        "width": 500,
+        "height": 250,
+        "mark": {
+          "type": "line",
+          "point": true,
+          "strokeWidth": 1.5
+        },
+        "encoding": {
+          "x": {
+            "field": "Month",
+            "type": "temporal",
+            "axis": {
+              "format": "%b %Y",
+              "labelAngle": -45
+            }
+          },
+          "y": {
+            "aggregate": "sum",
+            "field": "Total_Incidents",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "Month",
+              "type": "temporal",
+              "format": "%B %Y"
+            },
+            {
+              "aggregate": "sum",
+              "field": "Total_Incidents",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#e0e0e0"
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-16",
+      "name": "Premise Distribution Over Time",
+      "semantics": {
+        "title": "Premise Distribution Over Time",
+        "description": "This donut chart visualizes the distribution of total crime incidents, categorized by whether they occurred inside ('I') or outside ('O') a premise.",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "A dataset of NIBRS Group A crime incidents in Baltimore, based on the URL structure and filename."
+        },
+        "structure_type": "pie_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "incident_count",
+            "type": "quantitative",
+            "cardinality": 2,
+            "sample_values": []
+          },
+          {
+            "field": "Inside_Outside",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "I",
+              "O"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "incidents",
+          "distribution",
+          "premise",
+          "location",
+          "crime"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 300,
+          "spec_height": 300,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Premise Distribution Over Time",
+        "data": {
+          "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+        },
+        "transform": [
+          {
+            "aggregate": [
+              {
+                "op": "sum",
+                "field": "Total_Incidents",
+                "as": "incident_count"
+              }
+            ],
+            "groupby": [
+              "Inside_Outside"
+            ]
+          },
+          {
+            "filter": "datum.Inside_Outside === 'I' || datum.Inside_Outside === 'O'"
+          }
+        ],
+        "width": 300,
+        "height": 300,
+        "mark": {
+          "type": "arc",
+          "innerRadius": 50
+        },
+        "encoding": {
+          "theta": {
+            "field": "incident_count",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Inside_Outside",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "I",
+                "O"
+              ],
+              "range": [
+                "#4682b4",
+                "#ff8c00"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "Inside_Outside",
+              "type": "nominal",
+              "title": "Location"
+            },
+            {
+              "field": "incident_count",
+              "type": "quantitative",
+              "title": "Incidents"
+            }
+          ]
+        },
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-17",
+      "name": "Districton Map with Crime Incidents in Baltimore City",
+      "semantics": {
+        "title": "Districton Map with Crime Incidents in Baltimore City",
+        "description": "This is a layered map of Baltimore City. The base layer shows the city's geoshape, and the top layer plots a sample of 5000 crime incidents as individual points. The points are colored by their respective police district ('New_District').",
+        "source_id": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv",
+        "source_context": {
+          "dataset_name": "NIBRS GroupA Crime Data",
+          "location": "Baltimore",
+          "domain": "Crime",
+          "description": "Crime incident data for Baltimore from a CSV file, including fields for Latitude, Longitude, New_District, and Neighborhood."
+        },
+        "structure_type": "scatter_plot",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "lon",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "lat",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "New_District",
+            "type": "nominal",
+            "cardinality": null,
+            "sample_values": []
+          },
+          {
+            "field": "Neighborhood",
+            "type": "nominal",
+            "cardinality": null,
+            "sample_values": []
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "crime incidents",
+          "Baltimore",
+          "map",
+          "district",
+          "geospatial"
+        ],
+        "entity_mentions": {
+          "location": [
+            "Baltimore City",
+            "Maryland"
+          ],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 600,
+          "spec_height": 600,
+          "has_temporal": false,
+          "has_geospatial": true,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": "layer"
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Districton Map with Crime Incidents in Baltimore City",
+        "width": 600,
+        "height": 600,
+        "projection": {
+          "type": "mercator"
+        },
+        "layer": [
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/frankrowe/maryland-geojson/master/maryland-counties.geojson",
+              "format": {
+                "type": "json",
+                "property": "features"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.properties.name == 'Baltimore City'"
+              }
+            ],
+            "mark": {
+              "type": "geoshape",
+              "fill": "#f8f8f8",
+              "stroke": "#333",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/uah0dog/test/refs/heads/main/BaltimoreDataset/NIBRS_GroupA_Crime_Data_8914151926081121180.csv"
+            },
+            "transform": [
+              {
+                "filter": "datum.Latitude != null && datum.Longitude != null && datum.Latitude != '' && datum.Longitude != ''"
+              },
+              {
+                "filter": "datum.New_District != null && datum.New_District != ''"
+              },
+              {
+                "calculate": "toNumber(datum.Latitude)",
+                "as": "lat"
+              },
+              {
+                "calculate": "toNumber(datum.Longitude)",
+                "as": "lon"
+              },
+              {
+                "sample": 5000
+              }
+            ],
+            "mark": {
+              "type": "circle",
+              "size": 3
+            },
+            "encoding": {
+              "longitude": {
+                "field": "lon",
+                "type": "quantitative"
+              },
+              "latitude": {
+                "field": "lat",
+                "type": "quantitative"
+              },
+              "color": {
+                "field": "New_District",
+                "type": "nominal"
+              },
+              "tooltip": [
+                {
+                  "field": "New_District",
+                  "type": "nominal",
+                  "title": "District"
+                },
+                {
+                  "field": "Neighborhood",
+                  "type": "nominal"
+                }
+              ]
+            }
+          }
+        ],
+        "config": {
+          "view": {
+            "stroke": null
+          }
+        }
+      },
+      "type": "visual"
+    }
+  ]
+}

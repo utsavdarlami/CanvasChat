@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.env
+*.pyc
+.ipynb_checkpoints/
+
+semantics_cache_*.json
+/papers/
+/paper_notes/savil_cross_display_links_analysis.md
+/.cursor/
+/agent/.adk/
+/opencode.json
+/.opencode/
+/.codex/

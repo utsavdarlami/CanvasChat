@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    env_file:
+      - ./backend/.env
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  yjs:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - yjs_modules:/app
+    command: sh -c "rm -rf package-lock.json node_modules/.package-lock.json && npm install y-websocket@2 && npx y-websocket"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=1234
+    expose:
+      - "1234"
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+      - yjs
+    restart: unless-stopped
+
+volumes:
+  yjs_modules:

@@ -1,0 +1,10 @@
+version: "3"
+agent:
+    # Get your token: https://dashboard.ngrok.com/get-started/your-authtoken
+    # Copy this file to ngrok.yml and fill it in. ngrok.yml is gitignored.
+    authtoken: <your-ngrok-authtoken>
+tunnels:
+  app:
+    proto: http
+    addr: 8080
+    domain: <your-reserved-domain>.ngrok-free.dev

@@ -1,0 +1,2435 @@
+{
+  "analyzed_entities": [
+    {
+      "id": "entity-0",
+      "name": "Individual Reviews \u2014 Word Count & Sentiment",
+      "semantics": {
+        "title": "Individual Reviews \u2014 Word Count & Sentiment",
+        "description": "This dot plot visualizes individual reviews, plotting each as a circle based on its word count on the x-axis and its sentiment category on the y-axis. The color of each circle also represents the sentiment.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Review Data",
+          "location": null,
+          "domain": "sentiment analysis",
+          "description": "Embedded data containing individual reviews with their word count, sentiment classification, and a text excerpt."
+        },
+        "structure_type": "scatter_plot",
+        "granularity": "detailed",
+        "semantic_dimensions": [
+          {
+            "field": "word_count",
+            "type": "quantitative",
+            "cardinality": 15,
+            "sample_values": [
+              21,
+              19,
+              16
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "Negative",
+              "Positive",
+              "Ambiguous"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "reviews",
+          "sentiment",
+          "word count",
+          "text analysis"
+        ],
+        "entity_mentions": {
+          "location": [],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 520,
+          "spec_height": 200,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Individual Reviews \u2014 Word Count & Sentiment",
+        "width": 520,
+        "height": 200,
+        "data": {
+          "values": [
+            {
+              "review": "Review #1",
+              "word_count": 21,
+              "sentiment": "Negative",
+              "excerpt": "a dreary , soulless exercise in franchise filmmaking th..."
+            },
+            {
+              "review": "Review #2",
+              "word_count": 19,
+              "sentiment": "Negative",
+              "excerpt": "a waste of a good cast and an interesting premise , squ..."
+            },
+            {
+              "review": "Review #3",
+              "word_count": 16,
+              "sentiment": "Positive",
+              "excerpt": "an unusually smart and gripping thriller that keeps you..."
+            },
+            {
+              "review": "Review #4",
+              "word_count": 17,
+              "sentiment": "Negative",
+              "excerpt": "an unmitigated disaster that manages to be both boring ..."
+            },
+            {
+              "review": "Review #5",
+              "word_count": 17,
+              "sentiment": "Negative",
+              "excerpt": "despite a promising setup , the film collapses into cli..."
+            },
+            {
+              "review": "Review #6",
+              "word_count": 20,
+              "sentiment": "Positive",
+              "excerpt": "rich in detail , beautifully shot and powerfully acted ..."
+            },
+            {
+              "review": "Review #7",
+              "word_count": 18,
+              "sentiment": "Positive",
+              "excerpt": "a taut , intelligent thriller that manages to keep the ..."
+            },
+            {
+              "review": "Review #8",
+              "word_count": 13,
+              "sentiment": "Negative",
+              "excerpt": "an inept , an unfunny and an unappealing film from begi..."
+            },
+            {
+              "review": "Review #9",
+              "word_count": 17,
+              "sentiment": "Negative",
+              "excerpt": "so formulaic and devoid of surprise that you can predic..."
+            },
+            {
+              "review": "Review #10",
+              "word_count": 19,
+              "sentiment": "Ambiguous",
+              "excerpt": "the lead performance is genuinely brilliant but the fil..."
+            },
+            {
+              "review": "Review #11",
+              "word_count": 21,
+              "sentiment": "Negative",
+              "excerpt": "the movie is so poorly directed and acted that it has t..."
+            },
+            {
+              "review": "Review #12",
+              "word_count": 19,
+              "sentiment": "Negative",
+              "excerpt": "tries for edgy dark comedy but achieves only a kind of ..."
+            },
+            {
+              "review": "Review #13",
+              "word_count": 18,
+              "sentiment": "Positive",
+              "excerpt": "the film is a masterpiece of subtlety and restraint , a..."
+            },
+            {
+              "review": "Review #14",
+              "word_count": 18,
+              "sentiment": "Negative",
+              "excerpt": "the dialogue is painfully stilted and the characters ar..."
+            },
+            {
+              "review": "Review #15",
+              "word_count": 22,
+              "sentiment": "Ambiguous",
+              "excerpt": "has its moments of sharp wit and genuine emotion , thou..."
+            },
+            {
+              "review": "Review #16",
+              "word_count": 10,
+              "sentiment": "Negative",
+              "excerpt": "loud , confused , and about thirty minutes too long..."
+            },
+            {
+              "review": "Review #17",
+              "word_count": 7,
+              "sentiment": "Positive",
+              "excerpt": "enormously entertaining for moviegoers of any age..."
+            },
+            {
+              "review": "Review #18",
+              "word_count": 14,
+              "sentiment": "Ambiguous",
+              "excerpt": "visually stunning but emotionally hollow , a film you a..."
+            },
+            {
+              "review": "Review #19",
+              "word_count": 6,
+              "sentiment": "Positive",
+              "excerpt": "the performances are an absolute joy..."
+            },
+            {
+              "review": "Review #20",
+              "word_count": 20,
+              "sentiment": "Ambiguous",
+              "excerpt": "some strong performances almost save a script that cann..."
+            },
+            {
+              "review": "Review #21",
+              "word_count": 17,
+              "sentiment": "Positive",
+              "excerpt": "director spielberg brings a sure hand to the material a..."
+            },
+            {
+              "review": "Review #22",
+              "word_count": 24,
+              "sentiment": "Positive",
+              "excerpt": "one of the best films of the year , a moving , deeply f..."
+            },
+            {
+              "review": "Review #23",
+              "word_count": 17,
+              "sentiment": "Positive",
+              "excerpt": "a stirring , funny and finally transporting re-imaginin..."
+            },
+            {
+              "review": "Review #24",
+              "word_count": 27,
+              "sentiment": "Positive",
+              "excerpt": "what really surprises about wiseman 's documentary is h..."
+            },
+            {
+              "review": "Review #25",
+              "word_count": 26,
+              "sentiment": "Ambiguous",
+              "excerpt": "it is not a bad film , but neither is it a particularly..."
+            }
+          ]
+        },
+        "mark": {
+          "type": "circle",
+          "size": 180,
+          "opacity": 0.85,
+          "stroke": "#fff",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "x": {
+            "field": "word_count",
+            "type": "quantitative",
+            "title": "Word Count",
+            "scale": {
+              "zero": false
+            }
+          },
+          "y": {
+            "field": "sentiment",
+            "type": "nominal",
+            "title": null,
+            "axis": {
+              "labelFontSize": 12
+            }
+          },
+          "color": {
+            "field": "sentiment",
+            "type": "nominal",
+            "title": "Sentiment",
+            "scale": {
+              "domain": [
+                "Positive",
+                "Negative",
+                "Ambiguous"
+              ],
+              "range": [
+                "#4CAF50",
+                "#f44336",
+                "#FF9800"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "review",
+              "title": "ID"
+            },
+            {
+              "field": "sentiment"
+            },
+            {
+              "field": "word_count",
+              "title": "Words"
+            },
+            {
+              "field": "excerpt",
+              "title": "Text"
+            }
+          ]
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-1",
+      "name": "Negative Reviews \u2014 Word Count Distribution",
+      "semantics": {
+        "title": "Negative Reviews \u2014 Word Count Distribution",
+        "description": "This bar chart displays the distribution of negative reviews based on their word count. The x-axis shows word count bins, and the y-axis represents the number of reviews in each bin.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Negative Reviews Word Count",
+          "location": null,
+          "domain": "Text Analysis",
+          "description": "Counts of negative reviews grouped into word count bins."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "bin",
+            "type": "ordinal",
+            "cardinality": 7,
+            "sample_values": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315"
+            ]
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": [
+              0,
+              1,
+              6
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "reviews",
+          "word count",
+          "distribution",
+          "negative"
+        ],
+        "entity_mentions": {
+          "location": [],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 220,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Negative Reviews \u2014 Word Count Distribution",
+        "width": 400,
+        "height": 220,
+        "data": {
+          "values": [
+            {
+              "bin": "1\u20135",
+              "count": 0
+            },
+            {
+              "bin": "6\u201310",
+              "count": 1
+            },
+            {
+              "bin": "11\u201315",
+              "count": 1
+            },
+            {
+              "bin": "16\u201320",
+              "count": 6
+            },
+            {
+              "bin": "21\u201325",
+              "count": 2
+            },
+            {
+              "bin": "26\u201330",
+              "count": 0
+            },
+            {
+              "bin": "31+",
+              "count": 0
+            }
+          ]
+        },
+        "mark": {
+          "type": "bar",
+          "cornerRadiusTopLeft": 5,
+          "cornerRadiusTopRight": 5,
+          "color": "#f44336"
+        },
+        "encoding": {
+          "x": {
+            "field": "bin",
+            "type": "ordinal",
+            "title": "Word Count",
+            "sort": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315",
+              "16\u201320",
+              "21\u201325",
+              "26\u201330",
+              "31+"
+            ],
+            "axis": {
+              "labelAngle": -30
+            }
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Reviews"
+          },
+          "tooltip": [
+            {
+              "field": "bin",
+              "title": "Words"
+            },
+            {
+              "field": "count",
+              "title": "Count"
+            }
+          ]
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-2",
+      "name": "All Reviews \u2014 Word Count by Sentiment",
+      "semantics": {
+        "title": "All Reviews \u2014 Word Count by Sentiment",
+        "description": "This is a grouped bar chart showing the number of reviews for different word count bins. The bars are grouped and colored by sentiment (Positive, Negative, Ambiguous), illustrating the sentiment distribution across various review lengths.",
+        "source_id": "embedded",
+        "source_context": {
+          "dataset_name": "Review Sentiment Word Count",
+          "location": null,
+          "domain": "reviews",
+          "description": "Embedded dataset containing counts of reviews, binned by word count and categorized by sentiment."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "regional",
+        "semantic_dimensions": [
+          {
+            "field": "bin",
+            "type": "ordinal",
+            "cardinality": 7,
+            "sample_values": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315"
+            ]
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": [
+              0,
+              1,
+              2,
+              6
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "Positive",
+              "Negative",
+              "Ambiguous"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "reviews",
+          "sentiment",
+          "word count",
+          "count"
+        ],
+        "entity_mentions": {
+          "location": [],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 450,
+          "spec_height": 240,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "All Reviews \u2014 Word Count by Sentiment",
+        "width": 450,
+        "height": 240,
+        "data": {
+          "values": [
+            {
+              "bin": "1\u20135",
+              "sentiment": "Positive",
+              "count": 0
+            },
+            {
+              "bin": "1\u20135",
+              "sentiment": "Negative",
+              "count": 0
+            },
+            {
+              "bin": "1\u20135",
+              "sentiment": "Ambiguous",
+              "count": 0
+            },
+            {
+              "bin": "6\u201310",
+              "sentiment": "Positive",
+              "count": 2
+            },
+            {
+              "bin": "6\u201310",
+              "sentiment": "Negative",
+              "count": 1
+            },
+            {
+              "bin": "6\u201310",
+              "sentiment": "Ambiguous",
+              "count": 0
+            },
+            {
+              "bin": "11\u201315",
+              "sentiment": "Positive",
+              "count": 0
+            },
+            {
+              "bin": "11\u201315",
+              "sentiment": "Negative",
+              "count": 1
+            },
+            {
+              "bin": "11\u201315",
+              "sentiment": "Ambiguous",
+              "count": 1
+            },
+            {
+              "bin": "16\u201320",
+              "sentiment": "Positive",
+              "count": 6
+            },
+            {
+              "bin": "16\u201320",
+              "sentiment": "Negative",
+              "count": 6
+            },
+            {
+              "bin": "16\u201320",
+              "sentiment": "Ambiguous",
+              "count": 2
+            },
+            {
+              "bin": "21\u201325",
+              "sentiment": "Positive",
+              "count": 1
+            },
+            {
+              "bin": "21\u201325",
+              "sentiment": "Negative",
+              "count": 2
+            },
+            {
+              "bin": "21\u201325",
+              "sentiment": "Ambiguous",
+              "count": 1
+            },
+            {
+              "bin": "26\u201330",
+              "sentiment": "Positive",
+              "count": 1
+            },
+            {
+              "bin": "26\u201330",
+              "sentiment": "Negative",
+              "count": 0
+            },
+            {
+              "bin": "26\u201330",
+              "sentiment": "Ambiguous",
+              "count": 1
+            },
+            {
+              "bin": "31+",
+              "sentiment": "Positive",
+              "count": 0
+            },
+            {
+              "bin": "31+",
+              "sentiment": "Negative",
+              "count": 0
+            },
+            {
+              "bin": "31+",
+              "sentiment": "Ambiguous",
+              "count": 0
+            }
+          ]
+        },
+        "mark": {
+          "type": "bar",
+          "cornerRadiusTopLeft": 3,
+          "cornerRadiusTopRight": 3
+        },
+        "encoding": {
+          "x": {
+            "field": "bin",
+            "type": "ordinal",
+            "title": "Word Count",
+            "sort": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315",
+              "16\u201320",
+              "21\u201325",
+              "26\u201330",
+              "31+"
+            ],
+            "axis": {
+              "labelAngle": -30
+            }
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Reviews"
+          },
+          "color": {
+            "field": "sentiment",
+            "type": "nominal",
+            "title": "Sentiment",
+            "scale": {
+              "domain": [
+                "Positive",
+                "Negative",
+                "Ambiguous"
+              ],
+              "range": [
+                "#4CAF50",
+                "#f44336",
+                "#FF9800"
+              ]
+            }
+          },
+          "xOffset": {
+            "field": "sentiment"
+          },
+          "tooltip": [
+            {
+              "field": "sentiment"
+            },
+            {
+              "field": "bin",
+              "title": "Words"
+            },
+            {
+              "field": "count",
+              "title": "Count"
+            }
+          ]
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-3",
+      "name": "Positive Reviews \u2014 Word Count Distribution",
+      "semantics": {
+        "title": "Positive Reviews \u2014 Word Count Distribution",
+        "description": "This bar chart displays the distribution of word counts for positive reviews, showing the number of reviews that fall into specific word count bins.",
+        "source_id": "embedded",
+        "source_context": {
+          "dataset_name": "Review Word Counts",
+          "location": null,
+          "domain": "reviews",
+          "description": "Embedded data representing the count of reviews within specific word count bins."
+        },
+        "structure_type": "bar_chart",
+        "granularity": "overview",
+        "semantic_dimensions": [
+          {
+            "field": "bin",
+            "type": "ordinal",
+            "cardinality": 7,
+            "sample_values": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315"
+            ]
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "cardinality": null,
+            "sample_values": [
+              2,
+              6,
+              1
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "reviews",
+          "word count",
+          "distribution",
+          "positive reviews"
+        ],
+        "entity_mentions": {
+          "location": [],
+          "organization": [],
+          "person": [],
+          "identifier": []
+        },
+        "quantitative_profile": {
+          "spec_width": 400,
+          "spec_height": 220,
+          "has_temporal": false,
+          "has_geospatial": false,
+          "is_interactive": false,
+          "interaction_type": null,
+          "composition_type": null
+        },
+        "narrative_profile": null
+      },
+      "value": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+        "title": "Positive Reviews \u2014 Word Count Distribution",
+        "width": 400,
+        "height": 220,
+        "data": {
+          "values": [
+            {
+              "bin": "1\u20135",
+              "count": 0
+            },
+            {
+              "bin": "6\u201310",
+              "count": 2
+            },
+            {
+              "bin": "11\u201315",
+              "count": 0
+            },
+            {
+              "bin": "16\u201320",
+              "count": 6
+            },
+            {
+              "bin": "21\u201325",
+              "count": 1
+            },
+            {
+              "bin": "26\u201330",
+              "count": 1
+            },
+            {
+              "bin": "31+",
+              "count": 0
+            }
+          ]
+        },
+        "mark": {
+          "type": "bar",
+          "cornerRadiusTopLeft": 5,
+          "cornerRadiusTopRight": 5,
+          "color": "#4CAF50"
+        },
+        "encoding": {
+          "x": {
+            "field": "bin",
+            "type": "ordinal",
+            "title": "Word Count",
+            "sort": [
+              "1\u20135",
+              "6\u201310",
+              "11\u201315",
+              "16\u201320",
+              "21\u201325",
+              "26\u201330",
+              "31+"
+            ],
+            "axis": {
+              "labelAngle": -30
+            }
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Reviews"
+          },
+          "tooltip": [
+            {
+              "field": "bin",
+              "title": "Words"
+            },
+            {
+              "field": "count",
+              "title": "Count"
+            }
+          ]
+        }
+      },
+      "type": "visual"
+    },
+    {
+      "id": "entity-4",
+      "name": "review_1.txt",
+      "semantics": {
+        "title": "Review of Franchise Filmmaking",
+        "description": "A negative review describing an unnamed film as a dreary, soulless, and unoriginal exercise in franchise filmmaking.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film and Product Reviews",
+          "location": null,
+          "domain": "media",
+          "description": "A collection of short reviews, typically used for sentiment analysis, covering various products or media."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "franchise filmmaking",
+              "film criticism"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "franchise filmmaking",
+          "dreary",
+          "soulless",
+          "negative review",
+          "unoriginal",
+          "uninteresting",
+          "film criticism"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a negative review of a film or filmmaking style. The author describes it as a dreary and soulless exercise in franchise filmmaking, criticizing it for lacking originality and an interesting presentation.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\na dreary , soulless exercise in franchise filmmaking that has nothing new to say and no interesting way to say it",
+      "type": "text"
+    },
+    {
+      "id": "entity-5",
+      "name": "review_10.txt",
+      "semantics": {
+        "title": "Review of a Film with a Brilliant Lead Performance",
+        "description": "A film review that praises the lead performance as brilliant but criticizes the surrounding film as weak, resulting in wasted talent.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews or critiques for media such as films."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "lead performance",
+              "film quality"
+            ]
+          },
+          {
+            "field": "assessment",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "brilliant",
+              "weak"
+            ]
+          },
+          {
+            "field": "label",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "ambiguous"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "lead performance",
+          "brilliant",
+          "film",
+          "weak",
+          "talent",
+          "wasted",
+          "ambiguous",
+          "review"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This film review expresses a mixed opinion. It highlights the lead performance as 'genuinely brilliant' but simultaneously criticizes the overall film for being 'so weak' that it wastes the actor's talent.",
+          "sentiment": "mixed",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: ambiguous\n\nthe lead performance is genuinely brilliant but the film around it is so weak that the talent feels wasted",
+      "type": "text"
+    },
+    {
+      "id": "entity-6",
+      "name": "review_11.txt",
+      "semantics": {
+        "title": "Review of a Poorly Directed and Acted Movie",
+        "description": "A negative review describing a movie as being so poorly directed and acted that it evokes pity for those involved.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews, labeled for sentiment analysis."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "movie review",
+              "film direction",
+              "acting"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "movie",
+          "review",
+          "negative",
+          "poorly directed",
+          "acted",
+          "film"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a negative review of a movie. The author states the film is very poorly directed and acted. The overall effect of the poor quality is to make the viewer feel bad for the people who made it.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nthe movie is so poorly directed and acted that it has the effect of making you feel bad for everyone involved",
+      "type": "text"
+    },
+    {
+      "id": "entity-7",
+      "name": "review_12.txt",
+      "semantics": {
+        "title": "Critique of an Edgy Dark Comedy",
+        "description": "A negative review of a creative work, likely a film or show. The reviewer finds that the work's attempt at edgy dark comedy fails, resulting in a smug and unpleasant experience that is difficult to watch.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews for sentiment analysis, likely for movies, TV shows, or other media."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "dark comedy"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          },
+          {
+            "field": "critique",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "smug unpleasantness",
+              "difficult to sit through"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "negative",
+          "edgy",
+          "dark comedy",
+          "smug",
+          "unpleasantness",
+          "review",
+          "critique"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a negative review of a creative work, likely a film or show. The reviewer finds that the work's attempt at edgy dark comedy fails, resulting in a smug and unpleasant experience that is difficult to watch.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\ntries for edgy dark comedy but achieves only a kind of smug unpleasantness that is difficult to sit through",
+      "type": "text"
+    },
+    {
+      "id": "entity-8",
+      "name": "review_13.txt",
+      "semantics": {
+        "title": "Review of a Film's Subtlety and Restraint",
+        "description": "A brief, positive review praising a film for its subtlety, restraint, and ability to achieve emotional power with little visible effort.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted or professional reviews for films."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "film",
+              "subtlety",
+              "restraint",
+              "emotional power"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film",
+          "masterpiece",
+          "subtlety",
+          "restraint",
+          "emotional power",
+          "effort"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a brief, positive review of a film. It describes the film as a masterpiece of subtlety and restraint, which achieves a cumulative emotional power with what appears to be little effort.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nthe film is a masterpiece of subtlety and restraint , achieving cumulative emotional power with little visible effort",
+      "type": "text"
+    },
+    {
+      "id": "entity-9",
+      "name": "review_14.txt",
+      "semantics": {
+        "title": "Critique of Stilted Dialogue and Thin Characters",
+        "description": "A negative review criticizing a work for its 'painfully stilted' dialogue. It also asserts that the characters are poorly developed, describing them as 'so thin they might as well be cardboard cutouts.'",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews and feedback on various media."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "dialogue quality",
+              "character development"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "dialogue",
+          "stilted",
+          "characters",
+          "thin",
+          "cardboard cutouts",
+          "negative review"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "The document is a negative review criticizing a work for its 'painfully stilted' dialogue. It also asserts that the characters are poorly developed, describing them as 'so thin they might as well be cardboard cutouts.'",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nthe dialogue is painfully stilted and the characters are so thin they might as well be cardboard cutouts",
+      "type": "text"
+    },
+    {
+      "id": "entity-10",
+      "name": "review_15.txt",
+      "semantics": {
+        "title": "Review of a work with wit, emotion, and flaws",
+        "description": "This review describes a work that contains moments of sharp wit and genuine emotion. However, these positive aspects are obscured by an excessive number of subplots and an inconsistent tone, leading to an overall ambiguous assessment.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "arts_and_entertainment",
+          "description": "A collection of user-submitted reviews, often for media like films or books, providing subjective assessments."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "wit",
+              "emotion",
+              "subplots",
+              "tone"
+            ]
+          },
+          {
+            "field": "assessment",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "positive qualities",
+              "negative qualities"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "ambiguous",
+          "wit",
+          "emotion",
+          "subplots",
+          "uneven tone",
+          "review",
+          "critique",
+          "sharp",
+          "genuine"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This review describes a work that contains moments of sharp wit and genuine emotion. However, these positive aspects are obscured by an excessive number of subplots and an inconsistent tone, leading to an overall ambiguous assessment.",
+          "sentiment": "mixed",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: ambiguous\n\nhas its moments of sharp wit and genuine emotion , though they are buried under too many subplots and an uneven tone",
+      "type": "text"
+    },
+    {
+      "id": "entity-11",
+      "name": "review_16.txt",
+      "semantics": {
+        "title": "Review: Loud, Confused, and Too Long",
+        "description": "A short, negative review criticizing an unspecified subject for being loud, confused, and overly long.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "reviews",
+          "description": "A collection of short user-submitted reviews with sentiment labels."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "label",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          },
+          {
+            "field": "critique_attributes",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "loud",
+              "confused",
+              "too long"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "negative",
+          "review",
+          "loud",
+          "confused",
+          "long",
+          "critique"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a negative review describing an unspecified subject as loud, confused, and excessively long. The overall sentiment is explicitly labeled as negative.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nloud , confused , and about thirty minutes too long",
+      "type": "text"
+    },
+    {
+      "id": "entity-12",
+      "name": "review_17.txt",
+      "semantics": {
+        "title": "Positive Review for an Entertaining Movie",
+        "description": "A short, positive review describing an unspecified movie as 'enormously entertaining' and suitable for all ages. The document includes a 'positive' sentiment label.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Text Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of labeled text snippets, likely for sentiment analysis training or product/media reviews."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "label",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          },
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "entertainment"
+            ]
+          },
+          {
+            "field": "target_audience",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "any age"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "entertainment",
+          "moviegoers",
+          "any age",
+          "review",
+          "positive"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a short movie review explicitly labeled as positive. The review states that the movie is 'enormously entertaining for moviegoers of any age'.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nenormously entertaining for moviegoers of any age",
+      "type": "text"
+    },
+    {
+      "id": "entity-13",
+      "name": "review_18.txt",
+      "semantics": {
+        "title": "Film Review: Visually Stunning but Emotionally Hollow",
+        "description": "A brief film review describing a film as visually stunning but emotionally hollow, leading to admiration rather than enjoyment. The review is labeled as 'ambiguous'.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of short film reviews or sentiment analysis labels."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "visuals",
+              "emotion",
+              "admiration",
+              "enjoyment"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "mixed"
+            ]
+          },
+          {
+            "field": "label",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "ambiguous"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film review",
+          "ambiguous",
+          "visually stunning",
+          "emotionally hollow",
+          "admire",
+          "enjoy",
+          "critique"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a brief film review with an 'ambiguous' label. The review describes the film as visually impressive but lacking emotional depth. It concludes that the film is one to be admired for its technical aspects rather than genuinely enjoyed.",
+          "sentiment": "mixed",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: ambiguous\n\nvisually stunning but emotionally hollow , a film you admire more than you enjoy",
+      "type": "text"
+    },
+    {
+      "id": "entity-14",
+      "name": "review_19.txt",
+      "semantics": {
+        "title": "Review of Performances",
+        "description": "A brief, positive review stating that the performances are an absolute joy.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "arts_and_entertainment",
+          "description": "A collection of short user reviews or feedback on various subjects, often used for sentiment analysis."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "performances"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "performances",
+          "joy",
+          "positive",
+          "review"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a brief, positive review of performances. The author describes them as an absolute joy.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nthe performances are an absolute joy",
+      "type": "text"
+    },
+    {
+      "id": "entity-15",
+      "name": "review_2.txt",
+      "semantics": {
+        "title": "Negative Film Review of a Script",
+        "description": "A negative review criticizing a film's script for failing to capitalize on a good cast and an interesting premise.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews for films, likely from a movie review dataset."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "cast",
+              "premise",
+              "script"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "negative",
+          "waste",
+          "good cast",
+          "interesting premise",
+          "squandered",
+          "script",
+          "film review"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a negative review of a film or production. The reviewer states that despite having a good cast and an interesting premise, the project was ultimately a failure. The primary reason cited for this failure is a poorly written script that lacks direction and development.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\na waste of a good cast and an interesting premise , squandered by a script that goes absolutely nowhere",
+      "type": "text"
+    },
+    {
+      "id": "entity-16",
+      "name": "review_20.txt",
+      "semantics": {
+        "title": "Review of a Script with Ambiguous Genre",
+        "description": "A brief review noting that strong performances are undermined by a script that is tonally inconsistent, wavering between comedy and drama.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "arts_and_entertainment",
+          "description": "A collection of reviews for scripts, movies, or plays."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "script",
+              "performances",
+              "comedy",
+              "drama"
+            ]
+          },
+          {
+            "field": "assessment",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "strong performances",
+              "undecided script"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "script",
+          "performances",
+          "comedy",
+          "drama",
+          "ambiguous",
+          "strong",
+          "review"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "The document is a brief review of a script. It notes that strong performances are a positive aspect, but the script itself is flawed due to its inability to commit to being either a comedy or a drama.",
+          "sentiment": "mixed",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: ambiguous\n\nsome strong performances almost save a script that cannot decide whether it wants to be a comedy or a drama",
+      "type": "text"
+    },
+    {
+      "id": "entity-17",
+      "name": "review_21.txt",
+      "semantics": {
+        "title": "Review of Spielberg Film Performance",
+        "description": "A positive review praising director Spielberg's skill and the credible performances of the cast.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted or professional film reviews."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "person",
+            "type": "entity",
+            "cardinality": 1,
+            "sample_values": [
+              "spielberg"
+            ]
+          },
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "film direction",
+              "acting performance"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "spielberg",
+          "director",
+          "performances",
+          "cast",
+          "film",
+          "review",
+          "positive"
+        ],
+        "entity_mentions": {
+          "person": [
+            "spielberg"
+          ],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "The document is a positive review praising director Spielberg for his skillful handling of the material. It also commends the entire cast for delivering credible performances.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\ndirector spielberg brings a sure hand to the material and coaxes credible performances from his entire cast",
+      "type": "text"
+    },
+    {
+      "id": "entity-18",
+      "name": "review_22.txt",
+      "semantics": {
+        "title": "Positive Film Review",
+        "description": "A brief, positive review of an unnamed film, describing it as one of the best of the year and a moving piece of cinema with a lasting impact.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of film reviews with sentiment labels."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "film",
+              "cinema"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film",
+          "cinema",
+          "review",
+          "positive",
+          "moving",
+          "deeply felt",
+          "best of year"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a brief, positive review of a film. The reviewer describes it as one of the best films of the year, highlighting its moving and deeply felt nature that has a lasting impact.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\none of the best films of the year , a moving , deeply felt piece of cinema that lingers long after the credits roll",
+      "type": "text"
+    },
+    {
+      "id": "entity-19",
+      "name": "review_23.txt",
+      "semantics": {
+        "title": "Review of a Re-imagining of Beauty and the Beast",
+        "description": "A positive review of a film described as a stirring, funny, and transporting re-imagining of 'Beauty and the Beast' and 1930s horror films.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Film Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of short film or media reviews, typically labeled with a sentiment."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "re-imagining",
+              "beauty and the beast",
+              "horror films"
+            ]
+          },
+          {
+            "field": "descriptor",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "stirring",
+              "funny",
+              "transporting"
+            ]
+          },
+          {
+            "field": "time_period",
+            "type": "temporal",
+            "cardinality": 1,
+            "sample_values": [
+              "1930s"
+            ]
+          }
+        ],
+        "temporal_scope": {
+          "type": "range",
+          "date": null,
+          "start": "1930",
+          "end": "1939",
+          "year": null,
+          "quarter": null,
+          "source": "incident"
+        },
+        "keywords": [
+          "film review",
+          "positive",
+          "stirring",
+          "funny",
+          "transporting",
+          "re-imagining",
+          "beauty and the beast",
+          "1930s",
+          "horror films"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a positive review describing a film as a stirring, funny, and transporting re-imagining. The film is noted to be influenced by 'Beauty and the Beast' and horror films from the 1930s.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": [
+            "1930s"
+          ]
+        }
+      },
+      "value": "label: positive\n\na stirring , funny and finally transporting re-imagining of beauty and the beast and 1930s horror films",
+      "type": "text"
+    },
+    {
+      "id": "entity-20",
+      "name": "review_24.txt",
+      "semantics": {
+        "title": "Review of Wiseman's Documentary",
+        "description": "A brief, positive review of a documentary by Wiseman, highlighting its surprising humor and warmth.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Movie and Product Reviews",
+          "location": null,
+          "domain": "media",
+          "description": "A collection of short text reviews, likely used for sentiment analysis training."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "person",
+            "type": "entity",
+            "cardinality": 1,
+            "sample_values": [
+              "wiseman"
+            ]
+          },
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "documentary",
+              "humor",
+              "warmth"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "wiseman",
+          "documentary",
+          "funny",
+          "warmth",
+          "people",
+          "review",
+          "surprises"
+        ],
+        "entity_mentions": {
+          "person": [
+            "wiseman"
+          ],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "The document is a brief, positive review of a documentary by Wiseman. The reviewer expresses surprise at the film's humor and the warmth found both in the documentary itself and in the people it features.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nwhat really surprises about wiseman 's documentary is how funny it is , how much warmth there is in it and in the people who inhabit it",
+      "type": "text"
+    },
+    {
+      "id": "entity-21",
+      "name": "review_25.txt",
+      "semantics": {
+        "title": "Ambiguous Film Review",
+        "description": "A review of an unnamed film, describing it as neither good nor bad, but rather a mediocre and competent work.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews, typically for products, services, or media like films."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "film quality",
+              "film review"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "ambiguous"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film",
+          "review",
+          "ambiguous",
+          "bad film",
+          "good one",
+          "middle ground",
+          "competence",
+          "mediocrity"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document provides a review of an unnamed film. The reviewer describes the film with ambiguity, stating it is neither bad nor particularly good. The overall assessment is that the film occupies a frustrating middle ground where competence and mediocrity meet.",
+          "sentiment": "mixed",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: ambiguous\n\nit is not a bad film , but neither is it a particularly good one , hovering in that frustrating middle ground where competence meets mediocrity",
+      "type": "text"
+    },
+    {
+      "id": "entity-22",
+      "name": "review_3.txt",
+      "semantics": {
+        "title": "Review of a Smart and Gripping Thriller",
+        "description": "A brief, positive review describing a thriller as smart, gripping, and thought-provoking, with a lasting impact on the viewer.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "media",
+          "description": "A collection of user-submitted reviews for media content such as films or books."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "thriller"
+            ]
+          },
+          {
+            "field": "qualities",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "smart",
+              "gripping",
+              "thinking",
+              "questioning"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "thriller",
+          "review",
+          "positive",
+          "smart",
+          "gripping",
+          "thinking",
+          "questioning",
+          "opinion"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a positive review of a thriller. The reviewer describes the work as 'unusually smart and gripping,' noting that it is thought-provoking and stays with the audience even after it concludes.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nan unusually smart and gripping thriller that keeps you thinking and questioning even after it ends",
+      "type": "text"
+    },
+    {
+      "id": "entity-23",
+      "name": "review_4.txt",
+      "semantics": {
+        "title": "Review of an Unmitigated Disaster",
+        "description": "A brief, highly critical review describing an unspecified subject as an unmitigated disaster that is both boring and offensive.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "criticism",
+          "description": "A collection of user-submitted reviews and sentiment labels for various products or media."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "disaster",
+              "boring",
+              "offensive"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "disaster",
+          "boring",
+          "offensive",
+          "achievement",
+          "review",
+          "negative",
+          "critique"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a highly negative review of an unspecified subject, which it labels an 'unmitigated disaster'. The author notes that the subject manages to be both boring and offensive, which is described as a significant achievement.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nan unmitigated disaster that manages to be both boring and offensive , which is quite an achievement",
+      "type": "text"
+    },
+    {
+      "id": "entity-24",
+      "name": "review_5.txt",
+      "semantics": {
+        "title": "Film Review of a Promising but Predictable Movie",
+        "description": "A negative review of a film, noting that it starts with a promising setup but devolves into cliche and predictability before the third act.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews, likely for films or television, tagged with a sentiment label."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "film review",
+              "cliche",
+              "predictability"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film",
+          "review",
+          "negative",
+          "promising setup",
+          "cliche",
+          "predictability",
+          "third act"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This is a negative review of a film. The reviewer states that despite having a promising initial setup, the movie ultimately fails by becoming cliched and predictable well before its conclusion.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\ndespite a promising setup , the film collapses into cliche and predictability long before the third act",
+      "type": "text"
+    },
+    {
+      "id": "entity-25",
+      "name": "review_6.txt",
+      "semantics": {
+        "title": "Review of a Moving Portrait of a Family in Crisis",
+        "description": "A brief, positive review praising a work, likely a film, for its detail, cinematography, and acting, describing it as a moving portrayal of a family in crisis.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews for entertainment products, such as movies or plays."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 4,
+            "sample_values": [
+              "family crisis",
+              "acting",
+              "cinematography"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "review",
+          "positive",
+          "detail",
+          "beautifully shot",
+          "powerfully acted",
+          "moving portrait",
+          "family in crisis"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a positive review of a work, likely a film, praising its rich detail, beautiful cinematography, and powerful acting. The work is described as a moving portrait of a family in crisis.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\nrich in detail , beautifully shot and powerfully acted , it is a moving portrait of a family in crisis",
+      "type": "text"
+    },
+    {
+      "id": "entity-26",
+      "name": "review_7.txt",
+      "semantics": {
+        "title": "Review of a Taut, Intelligent Thriller",
+        "description": "A brief, positive review of a thriller, praising its tautness, intelligence, and suspenseful nature that keeps the audience engaged until the end.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Product Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of user-submitted reviews for entertainment products like movies or books."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "thriller",
+              "suspense"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "positive"
+            ]
+          },
+          {
+            "field": "attribute",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "taut",
+              "intelligent",
+              "suspenseful"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "thriller",
+          "taut",
+          "intelligent",
+          "suspense",
+          "audience",
+          "guessing",
+          "final moments"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a positive review of a thriller. The reviewer describes it as taut and intelligent, highlighting its ability to maintain suspense and keep the audience guessing until the very end.",
+          "sentiment": "positive",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: positive\n\na taut , intelligent thriller that manages to keep the audience guessing right up to the final moments",
+      "type": "text"
+    },
+    {
+      "id": "entity-27",
+      "name": "review_8.txt",
+      "semantics": {
+        "title": "Negative Film Review",
+        "description": "A short, negative review describing a film as inept, unfunny, and unappealing.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "Product Reviews",
+          "location": null,
+          "domain": "entertainment",
+          "description": "A collection of short reviews, likely used for sentiment classification."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "film review"
+            ]
+          },
+          {
+            "field": "attributes",
+            "type": "nominal",
+            "cardinality": 3,
+            "sample_values": [
+              "inept",
+              "unfunny",
+              "unappealing"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "film",
+          "review",
+          "negative",
+          "inept",
+          "unfunny",
+          "unappealing"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document contains a highly negative review of a film. The film is described as inept, unfunny, and unappealing from start to finish.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nan inept , an unfunny and an unappealing film from beginning to end",
+      "type": "text"
+    },
+    {
+      "id": "entity-28",
+      "name": "review_9.txt",
+      "semantics": {
+        "title": "Review of a Formulaic and Predictable Plot",
+        "description": "A negative review criticizing a creative work for its formulaic and predictable plot, where all outcomes are obvious from the start.",
+        "source_id": null,
+        "source_context": {
+          "dataset_name": "User Reviews",
+          "location": null,
+          "domain": "media",
+          "description": "A collection of user-submitted reviews, typically for media such as movies, books, or games."
+        },
+        "structure_type": "review",
+        "granularity": "summary",
+        "semantic_dimensions": [
+          {
+            "field": "topic",
+            "type": "nominal",
+            "cardinality": 2,
+            "sample_values": [
+              "plot predictability",
+              "formulaic writing"
+            ]
+          },
+          {
+            "field": "sentiment",
+            "type": "nominal",
+            "cardinality": 1,
+            "sample_values": [
+              "negative"
+            ]
+          }
+        ],
+        "temporal_scope": null,
+        "keywords": [
+          "review",
+          "negative",
+          "formulaic",
+          "predictable",
+          "plot point",
+          "surprise",
+          "opening scene"
+        ],
+        "entity_mentions": {
+          "person": [],
+          "location": [],
+          "organization": [],
+          "identifier": []
+        },
+        "quantitative_profile": null,
+        "narrative_profile": {
+          "summary": "This document is a negative review of a creative work. The reviewer criticizes the plot as being completely formulaic and predictable. According to the review, every plot point is easily anticipated from the very beginning, leaving no room for surprise.",
+          "sentiment": "negative",
+          "document_date": null,
+          "event_dates_mentioned": []
+        }
+      },
+      "value": "label: negative\n\nso formulaic and devoid of surprise that you can predict every plot point from the opening scene",
+      "type": "text"
+    }
+  ]
+}
