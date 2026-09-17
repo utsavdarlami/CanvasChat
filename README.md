@@ -28,9 +28,13 @@ Natural-language system for organizing charts, documents, and images across mult
 
 ## Study examples
 
+### Example 1
+
 ![Layout progression across displays](assets/paper/fig5.png)
 
 *Layout progression. (a) Movie views initially appear on the center display. After separating movies by era and sorting them by rating, CanvasChat places pre-2010 movies on the left display (b) and post-2010 movies on the right display (c), with highlighted views indicating the organized groups.*
+
+### Example 2
 
 ![Layout mirroring interaction](assets/paper/fig6.png)
 
