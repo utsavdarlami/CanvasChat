@@ -139,7 +139,7 @@ See `docs/frontend_chat_autocomplete.md` for client integration guidance, includ
 ## Project Structure
 
 ```
-semantic-api-lite/
+canvaschat/
 ├── main.py                  # FastAPI application entry point
 ├── pyproject.toml           # dependencies (uv.lock pins exact versions)
 ├── .env.example

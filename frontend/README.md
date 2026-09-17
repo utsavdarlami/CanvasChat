@@ -1,4 +1,4 @@
-# LLM Distribution UI
+# CanvasChat
 
 Interactive visualization framework for semantic relationship graphs with support for entity-only and full graph visualizations.
 

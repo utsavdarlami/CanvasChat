@@ -22,6 +22,11 @@ ngrok.yml
 # backend/scripts/generate_movie_dataset.py writes into study_files/dataset/.
 /study_files/
 
+# --- paper sources: kept locally for context, not committed ---
+# Figures used in README are exported copies under assets/paper/.
+/Utsav__HICSS_/
+/Utsav__HICSS_.zip
+
 # --- parked scratch notes, pending review before deletion ---
 /_archive/
 
